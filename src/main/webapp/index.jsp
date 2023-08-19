@@ -3,11 +3,13 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <meta http-equiv="refresh" content="0; url=InicioController?ruta=ver" />
+
 </head>
 <body>
-<h1><%= "Hello World!" %>
+
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+
 </body>
 </html>

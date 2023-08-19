@@ -13,7 +13,7 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 	}
 	@Override
 	public Usuario autorizar(String nombre, String clave) {
-		String sentencia = "SELECT p FROM Usuario p WHERE p.username= :nombre AND p.contrasenia= :clave";
+		String sentencia = "SELECT p FROM Usuario p WHERE p.username= :nombre AND p.password= :clave";
 
 		Query query = em.createQuery(sentencia);
 		// Parametros ....
