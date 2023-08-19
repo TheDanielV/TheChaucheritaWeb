@@ -12,8 +12,7 @@ import java.io.IOException;
 
 @WebServlet("/InicioController")
 public class InicioController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+
     public InicioController() {
         super();
     }

@@ -13,18 +13,18 @@ public class Cuenta implements Serializable{
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name="propietario")
 	private Usuario propietario;
-	
-	@Column
-	private double monto;
+
 	@Enumerated
 	private CuentaTipo tipo;
+
+	private String nombre;
+
 
 	
 	public Cuenta() {}
 
-	public Cuenta( double total, Usuario propetario) {
+	public Cuenta(  Usuario propetario) {
 		super();
-		this.monto = total;
 		this.propietario = propetario;
 	}
 
@@ -45,15 +45,9 @@ public class Cuenta implements Serializable{
 		this.propietario = propietario;
 	}
 
-	public double getTotal() {
-		return monto;
-	}
 
-	public void setTotal(double total) {
-		this.monto = total;
-	}
 
-	
+
 	public CuentaTipo getTipo() {
 		return tipo;
 	}
