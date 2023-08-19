@@ -2,7 +2,6 @@ package modelo.jpa;
 
 
 import modelo.dao.CuentaDAO;
-import modelo.dto.CuentaDTO;
 import modelo.entidades.Cuenta;
 import modelo.entidades.CuentaTipo;
 

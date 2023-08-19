@@ -1,6 +1,5 @@
 package modelo.dao;
 
-import modelo.dto.CuentaDTO;
 import modelo.entidades.Cuenta;
 
 import java.util.List;
