@@ -11,10 +11,12 @@ import java.io.IOException;
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
+
     public LoginController() {
         super();
     }
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ruteador(request, response);
 	}
