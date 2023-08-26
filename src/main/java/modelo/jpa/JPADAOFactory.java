@@ -9,7 +9,6 @@ public class JPADAOFactory extends DAOFactory {
 
 	@Override
 	public UsuarioDAO getUsuarioDAO() {
-		// new JPAUsuarioDAO()
 		return new JPAUsuarioDAO();
 	}
 
