@@ -20,13 +20,13 @@ public class  Movimiento implements Serializable{
 	private double monto;
 	@Column(name = "descripcion")
 	private String descripcion;
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private Categoria categoria;
 
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private TipoMovimiento movimiento;
 
 

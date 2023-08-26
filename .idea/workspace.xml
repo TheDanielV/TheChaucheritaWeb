@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TheChaucheritaWeb:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="correccion de errores" />
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="USE CASE Ingreso,Egreso y Transferencia v1">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/listarpersona.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/vistaDashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/RegistrarMovimientosController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/TipoMovimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/TipoMovimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAGenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAGenericDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAUsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAUsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,12 +42,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
+        <option value="Enum" />
         <option value="Jsp File" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -29,31 +68,101 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/eclipse-workspace/TheChaucheritaWeb/src/main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.14760147&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/danie/eclipse-workspace/TheChaucheritaWeb/src/main/webapp/vista",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.14760147",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="modelo.entidades" />
+      <recent name="modelo.dto" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\eclipse-workspace\TheChaucheritaWeb\src\main\webapp\vista" />
+      <recent name="C:\Users\danie\eclipse-workspace\TheChaucheritaWeb\src\main\webapp\vista\templates" />
       <recent name="C:\Users\danie\eclipse-workspace\TheChaucheritaWeb\src\main" />
       <recent name="C:\Users\danie\eclipse-workspace\TheChaucheritaWeb\src\main\java" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\eclipse-workspace\TheChaucheritaWeb\src\main\webapp\vista" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="modelo.entidades" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controlador" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.UsuarioTest">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5">
+    <configuration name="CuentaTest.cuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheChaucheritaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modelo.entidades.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="modelo.entidades" />
+      <option name="MAIN_CLASS_NAME" value="modelo.entidades.CuentaTest" />
+      <option name="METHOD_NAME" value="cuentaTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CuentaTest.getAllCuentasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheChaucheritaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modelo.entidades.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="modelo.entidades" />
+      <option name="MAIN_CLASS_NAME" value="modelo.entidades.CuentaTest" />
+      <option name="METHOD_NAME" value="getAllCuentasTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovimientoTest.getMovmentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheChaucheritaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modelo.entidades.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="modelo.entidades" />
+      <option name="MAIN_CLASS_NAME" value="modelo.entidades.MovimientoTest" />
+      <option name="METHOD_NAME" value="getMovmentTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UsuarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheChaucheritaWeb" />
       <extension name="coverage">
@@ -77,12 +186,77 @@
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="352f7675-5d81-46be-b1aa-e6481a563c8c" />
+      </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56401" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -92,6 +266,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MovimientoTest.getMovmentTest" />
+        <item itemvalue="JUnit.CuentaTest.getAllCuentasTest" />
+        <item itemvalue="JUnit.CuentaTest.cuentaTest" />
         <item itemvalue="JUnit.UsuarioTest" />
       </list>
     </recent_temporary>
@@ -105,7 +282,20 @@
       <option name="presentableId" value="Default" />
       <updated>1692394406287</updated>
       <workItem from="1692394407473" duration="1376000" />
-      <workItem from="1692444957391" duration="1292000" />
+      <workItem from="1692444957391" duration="6259000" />
+      <workItem from="1692476630081" duration="586000" />
+      <workItem from="1692721618026" duration="13000" />
+      <workItem from="1692722440694" duration="3321000" />
+      <workItem from="1692726886833" duration="433000" />
+      <workItem from="1692733492026" duration="1917000" />
+      <workItem from="1692742063869" duration="34000" />
+      <workItem from="1692742800934" duration="21000" />
+      <workItem from="1692743935340" duration="700000" />
+      <workItem from="1692793448199" duration="657000" />
+      <workItem from="1692796306246" duration="10000" />
+      <workItem from="1692810889045" duration="2929000" />
+      <workItem from="1692827144231" duration="1195000" />
+      <workItem from="1693078678132" duration="11975000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -131,16 +321,60 @@
       <option name="project" value="LOCAL" />
       <updated>1692445817834</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=" CuentaTotalDTO y mas">
+      <option name="closed" value="true" />
+      <created>1692457064491</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692457064491</updated>
+    </task>
+    <task id="LOCAL-00005" summary="USE CASE Ingreso,Egreso y Transferencia v1">
+      <option name="closed" value="true" />
+      <created>1693083818114</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693083818114</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Adjusts" />
     <MESSAGE value="correccion de errores" />
-    <option name="LAST_COMMIT_MESSAGE" value="correccion de errores" />
+    <MESSAGE value=" CuentaTotalDTO y mas" />
+    <MESSAGE value="USE CASE Ingreso,Egreso y Transferencia v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="USE CASE Ingreso,Egreso y Transferencia v1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java</url>
+          <line>9</line>
+          <properties class="modelo.entidades.MovimientoTest" method="getMovmentTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
