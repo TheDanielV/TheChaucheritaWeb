@@ -6,7 +6,7 @@ import modelo.entidades.Cuenta;
 import javax.persistence.*;
 import java.util.List;
 
-public abstract class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
+public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 
 	private Class<T> persistentClass;
 	protected EntityManager em;
