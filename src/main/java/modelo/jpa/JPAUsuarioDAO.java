@@ -23,6 +23,11 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 		Usuario personaAutorizada = (Usuario) query.getSingleResult();
 		return personaAutorizada;
 	}
-	
+
+	@Override
+	public Usuario validarUsuarioParaRegistrar(String nombre, String clave) {
+		return null;
+	}
+
 
 }

@@ -10,13 +10,14 @@ public class Cuenta implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@ManyToOne(cascade = CascadeType.REFRESH)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="propietario")
 	private Usuario propietario;
 
 	@Enumerated
 	private CuentaTipo tipo;
 
+	@Column(name = "nombre")
 	private String nombre;
 
 
@@ -56,7 +57,21 @@ public class Cuenta implements Serializable{
 		this.tipo = tipo;
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
 
-	
-	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	@Override
+	public String toString() {
+		return "Cuenta{" +
+				"id=" + id +
+				", propietario=" + propietario +
+				", tipo=" + tipo +
+				", nombre='" + nombre + '\'' +
+				'}';
+	}
 }

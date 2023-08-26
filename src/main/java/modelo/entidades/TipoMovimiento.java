@@ -11,9 +11,9 @@ public enum TipoMovimiento implements Serializable {
     TRANSFERENCIA ("TRANSFERENCIA",3);
 
 
-    @Id
+
     private  int idTipo;
-    @Column(name = "tipo")
+
     private String nombreTipo;
 
     TipoMovimiento() {
@@ -38,5 +38,13 @@ public enum TipoMovimiento implements Serializable {
 
     public void setNombreTipo(String nombreTipo) {
         this.nombreTipo = nombreTipo;
+    }
+
+    @Override
+    public String toString() {
+        return "TipoMovimiento{" +
+                "idTipo=" + idTipo +
+                ", nombreTipo='" + nombreTipo + '\'' +
+                '}';
     }
 }

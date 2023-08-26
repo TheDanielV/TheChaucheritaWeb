@@ -24,7 +24,7 @@ public abstract class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> getAll() {
-		String sentence = "SELECT t FROM " + persistentClass.getName();
+		String sentence = "SELECT t FROM " + persistentClass.getName() + " t";
 		Query query = em.createQuery(sentence);
 		return query.getResultList();
 	}
