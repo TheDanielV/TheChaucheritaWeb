@@ -1,11 +1,12 @@
 package modelo.jpa;
 
 import modelo.dao.GenericDAO;
+import modelo.entidades.Cuenta;
 
 import javax.persistence.*;
 import java.util.List;
 
-public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
+public abstract class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 
 	private Class<T> persistentClass;
 	protected EntityManager em;
@@ -76,5 +77,6 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 			this.delete(entity);
 
 	}
+
 
 }

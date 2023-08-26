@@ -16,6 +16,11 @@ public class JPACuentaDAO extends JPAGenericDAO<Cuenta, Integer> implements Cuen
 	}
 
 	@Override
+	public Double getTotalCuenta(int id_cuenta) {
+		return null;
+	}
+
+	@Override
 	public List<Cuenta> getCuentasIngreso() {
 		String JPQL = "SELECT c FROM Cuenta c "
 				+ "WHERE c.tipo= :tipo";
