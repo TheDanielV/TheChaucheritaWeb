@@ -30,6 +30,11 @@ public class Usuario implements Serializable {
 		this.clave = clave;
 	}
 
+	public Usuario(String nombre, String clave) {
+		this.nombre = nombre;
+		this.clave = clave;
+	}
+
 	public Integer getId() {
 		return id;
 	}
