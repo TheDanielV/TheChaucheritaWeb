@@ -2,6 +2,7 @@ package modelo.entidades;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="Usuario")
@@ -11,24 +12,23 @@ public class Usuario implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_usuario")
+	@Column(name="idUsuario")
 	private Integer id;
 	
-	@Column(name="username")
-	private String username;
+	@Column(name="nombre")
+	private String nombre;
 	
-	@Column(name="password")
-	private String password;
-	
+	@Column(name="clave")
+	private String clave;
 	
 	public Usuario() {
 		
 	}
 
-	public Usuario(String nombre, String clave) {
-		super();
-		this.username = nombre;
-		this.password = clave;
+	public Usuario(Integer id, String nombre, String clave) {
+		this.id = id;
+		this.nombre = nombre;
+		this.clave = clave;
 	}
 
 	public Integer getId() {
@@ -40,26 +40,25 @@ public class Usuario implements Serializable {
 	}
 
 	public String getNombre() {
-		return username;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		this.username = nombre;
+		this.nombre = nombre;
 	}
 
 	public String getClave() {
-		return password;
+		return clave;
 	}
 
 	public void setClave(String clave) {
-		this.password = clave;
+		this.clave = clave;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + username + ", contrasenia=" + password + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", clave=" + clave + "]";
 	}
-	
 	
 }
 
