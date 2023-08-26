@@ -14,7 +14,7 @@ public class CuentaTest {
         usuario.setNombre("Daniel");
         usuario.setClave("daniel123");
         cuenta.setPropietario(usuario);
-        cuenta.setNombre("Banco del Pichincha");
+        cuenta.setNombre("Bolsillo");
         DAOFactory.getFactory().getCuentaDAO().create(cuenta);
     }
     @Test
