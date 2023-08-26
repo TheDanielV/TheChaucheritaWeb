@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Index - ProyectoWebGrupo6</title>
     <meta http-equiv="refresh" content="0; url=InicioController?ruta=ver" />
 
 </head>
