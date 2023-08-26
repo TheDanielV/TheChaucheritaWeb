@@ -2,12 +2,15 @@ package modelo.entidades;
 
 public enum CuentaTipo {
 	INGRESO ("INGRESO", 1),
-	GASTO ("GASTO", 2),
-	INGRESOGASTO ("INGRESOGASTO",3);
+	GASTO ("EGRESO", 2),
+	INGRESOGASTO ("EGRESOGASTO",3);
 	
 	private String nombreTipo;
 	private int idTipo;
-	
+
+	CuentaTipo() {
+	}
+
 	CuentaTipo(String nombreTipo, int id) {
 		this.idTipo = id;
 		this.nombreTipo = nombreTipo; 

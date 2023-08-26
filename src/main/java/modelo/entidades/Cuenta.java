@@ -56,10 +56,7 @@ public class Cuenta implements Serializable{
 		this.tipo = tipo;
 	}
 
-	@Override
-	public String toString() {
-		return "Cuenta [id=" + id + ", total=" + monto + "]";
-	}
+
 	
 	
 }

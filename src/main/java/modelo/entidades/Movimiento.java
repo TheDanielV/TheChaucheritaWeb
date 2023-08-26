@@ -5,109 +5,107 @@ import java.io.Serializable;
 import java.util.Date;
 @Entity
 @Table(name = "movimiento")
-public class Movimiento implements Serializable{
+public class  Movimiento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 
-	
-	@Column(name = "valor")
-	private double valor;
-	
+	@ManyToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "cuenta")
+	private Cuenta cuenta;
+
+	@Column(name = "monto")
+	private double monto;
+	@Column(name = "descripcion")
+	private String descripcion;
+	@Enumerated
+	private Categoria categoria;
+
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
-	
-	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name = "cuenta_origen")
-	private Cuenta origen;
-	
-	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name = "cuenta_destino")
-	private Cuenta destino;
-	
+
+	@Enumerated
+	private TipoMovimiento movimiento;
+
+
 	
 	public Movimiento() {
 	}
 
 
 
-	public Movimiento(double valor, Date fecha, Cuenta origen, Cuenta destino) {
+	public Movimiento(double monto, Date fecha, Cuenta cuenta, Cuenta destino, Categoria categoria) {
 		super();
 
-		this.valor = valor;
+		this.monto = monto;
 		this.fecha = fecha;
-		this.origen = origen;
-		this.destino = destino;
+		this.cuenta = cuenta;
+		this.categoria = categoria;
+
 	}
 
-
-
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-
-
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-
-
-	public double getValor() {
-		return valor;
+	public Cuenta getCuenta() {
+		return cuenta;
 	}
 
-
-
-	public void setValor(double valor) {
-		this.valor = valor;
+	public void setCuenta(Cuenta cuenta) {
+		this.cuenta = cuenta;
 	}
 
+	public double getMonto() {
+		return monto;
+	}
 
+	public void setMonto(double monto) {
+		this.monto = monto;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 
 	public Date getFecha() {
 		return fecha;
 	}
 
-
-
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 
-
-
-	public Cuenta getOrigen() {
-		return origen;
+	public TipoMovimiento getMovimiento() {
+		return movimiento;
 	}
 
-
-
-	public void setOrigen(Cuenta origen) {
-		this.origen = origen;
+	public void setMovimiento(TipoMovimiento movimiento) {
+		this.movimiento = movimiento;
 	}
-
-
-
-	public Cuenta getDestino() {
-		return destino;
-	}
-
-
-
-	public void setDestino(Cuenta destino) {
-		this.destino = destino;
-	}
-
-
 
 	@Override
 	public String toString() {
-		return "Movimiento [id=" + id + ", valor=" + valor + ", fecha=" + fecha + ", origen="
-				+ origen + ", destino=" + destino + "]";
+		return "Movimiento [id=" + id + ", monto=" + monto + ", fecha=" + fecha + ", cuenta"
+				+ cuenta + ", destino=" + "]";
 	}
 	
 	
