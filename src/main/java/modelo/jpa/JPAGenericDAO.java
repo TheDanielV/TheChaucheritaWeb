@@ -2,14 +2,7 @@ package modelo.jpa;
 
 import modelo.dao.GenericDAO;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.*;
 import java.util.List;
 
 public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
@@ -21,16 +14,20 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 		this.persistentClass = persistentClass;
 		this.em = Persistence.createEntityManagerFactory("ProyectoWeb").createEntityManager();
 	}
+
 	@Override
 	public T getById(ID id) {
 		return em.find(persistentClass, id);
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> getAll() {
-		return null;
+		String sentence = "SELECT t FROM " + persistentClass.getName();
+		Query query = em.createQuery(sentence);
+		return query.getResultList();
 	}
-	
+
 	@Override
 	public void create(T entity) {
 		em.getTransaction().begin();
@@ -38,12 +35,11 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 			em.persist(entity);
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			System.out.println(">>>> ERROR:JPAGenericDAO:create " + e);
+			System.out.println("No se ha realizado JPAGenericDAO.create - Error: " + e);
 			if (em.getTransaction().isActive())
 				em.getTransaction().rollback();
 		}
 	}
-
 
 	@Override
 	public void update(T entity) {
@@ -52,12 +48,13 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 			em.merge(entity);
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			System.out.println(">>>> ERROR:JPAGenericDAO:update " + e);
+			System.out.println("No se ha realizado JPAGenericDAO.update - Error: " + e);
 			if (em.getTransaction().isActive())
 				em.getTransaction().rollback();
 		}
 
 	}
+
 	@Override
 	public void delete(T entity) {
 		em.getTransaction().begin();
@@ -65,12 +62,13 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 			em.remove(entity);
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			System.out.println(">>>> ERROR:JPAGenericDAO:delete " + e);
+			System.out.println("No se ha realizado JPAGenericDAO.delete - Error: " + e);
 			if (em.getTransaction().isActive())
 				em.getTransaction().rollback();
 		}
 
 	}
+
 	@Override
 	public void deleteByID(ID id) {
 		T entity = this.getById(id);
@@ -78,9 +76,5 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID> {
 			this.delete(entity);
 
 	}
-
-
-
-
 
 }
