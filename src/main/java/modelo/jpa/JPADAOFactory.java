@@ -22,7 +22,4 @@ public class JPADAOFactory extends DAOFactory {
 		return new JPAMovimientoDAO();
 	}
 
-	
-
-
 }
