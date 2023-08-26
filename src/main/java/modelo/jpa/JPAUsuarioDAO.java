@@ -13,15 +13,19 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 	}
 	@Override
 	public Usuario autorizar(String nombre, String clave) {
-		String sentencia = "SELECT p FROM Usuario p WHERE p.username= :nombre AND p.password= :clave";
+		String sentencia = "SELECT u FROM Usuario u WHERE u.nombre= :nombre AND u.clave= :clave";
 
 		Query query = em.createQuery(sentencia);
-		// Parametros ....
 		query.setParameter("nombre", nombre);
 		query.setParameter("clave", clave);
 
-		Usuario personaAutorizada = (Usuario) query.getSingleResult();
-		return personaAutorizada;
+		Usuario usuarioAutorizado = (Usuario) query.getSingleResult();
+		return usuarioAutorizado;
+	}
+
+	@Override
+	public Usuario validarUsuarioParaRegistrar(String nombre, String clave) {
+		throw new UnsupportedOperationException("Unimplemented method 'validarUsuarioParaRegistrar'");
 	}
 	
 
