@@ -46,7 +46,7 @@
 					</form>
 
 					<div class="text-center">
-						<p><c:out value="${mensaje}"/><p>
+						<p><c:out value="${mensajeError}"/><p>
 					</div>
 
 					<form action="../LoginController?ruta=registrar" method="GET">
