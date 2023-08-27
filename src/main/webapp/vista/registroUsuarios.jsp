@@ -33,11 +33,11 @@
 							<legend>Registro</legend>
 
 							<p>Nombre</p>
-							<input type="text" name="nombre" />
+							<input type="text" id="nombre" name="nombre" />
 
 							<br>
 							<p>Clave</p>
-							<input type="password" name="clave" />
+							<input type="password" id="clave" name="clave" />
 
 							<br><br><br>
 							<input type="submit" value="Registrar" />
