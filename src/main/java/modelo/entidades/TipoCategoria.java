@@ -1,17 +1,17 @@
 package modelo.entidades;
 
-public enum CuentaTipo {
+public enum TipoCategoria {
 	INGRESO ("INGRESO", 1),
-	GASTO ("EGRESO", 2),
-	INGRESOGASTO ("EGRESOGASTO",3);
+	EGRESO ("EGRESO", 2),
+	TRANSFERENCIA ("TRANSFERENCIA",3);
 	
 	private String nombreTipo;
 	private int idTipo;
 
-	CuentaTipo() {
+	TipoCategoria() {
 	}
 
-	CuentaTipo(String nombreTipo, int id) {
+	TipoCategoria(String nombreTipo, int id) {
 		this.idTipo = id;
 		this.nombreTipo = nombreTipo; 
 	}

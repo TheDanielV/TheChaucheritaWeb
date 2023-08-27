@@ -1,9 +1,6 @@
 package modelo.jpa;
 
-import modelo.dao.CuentaDAO;
-import modelo.dao.DAOFactory;
-import modelo.dao.MovimientoDAO;
-import modelo.dao.UsuarioDAO;
+import modelo.dao.*;
 
 public class JPADAOFactory extends DAOFactory {
 
@@ -20,6 +17,11 @@ public class JPADAOFactory extends DAOFactory {
 	@Override
 	public MovimientoDAO getMovimientoDAO() {
 		return new JPAMovimientoDAO();
+	}
+
+	@Override
+	public CategoriaDAO getCategoriaDAO() {
+		return new JPACategoriaDAO();
 	}
 
 }

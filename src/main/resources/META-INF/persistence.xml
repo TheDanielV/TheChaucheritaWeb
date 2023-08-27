@@ -5,6 +5,7 @@
         <class>modelo.entidades.Usuario</class>
         <class>modelo.entidades.Movimiento</class>
         <class>modelo.entidades.Cuenta</class>
+        <class>modelo.entidades.Categoria</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/proyectoweb" />
             <property name="javax.persistence.jdbc.user" value="root" />

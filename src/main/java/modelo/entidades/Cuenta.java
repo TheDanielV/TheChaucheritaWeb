@@ -14,8 +14,6 @@ public class Cuenta implements Serializable{
 	@JoinColumn(name="propietario")
 	private Usuario propietario;
 
-	@Enumerated
-	private CuentaTipo tipo;
 
 	@Column(name = "nombre")
 	private String nombre;
@@ -47,16 +45,6 @@ public class Cuenta implements Serializable{
 	}
 
 
-
-
-	public CuentaTipo getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(CuentaTipo tipo) {
-		this.tipo = tipo;
-	}
-
 	public String getNombre() {
 		return nombre;
 	}
@@ -70,7 +58,6 @@ public class Cuenta implements Serializable{
 		return "Cuenta{" +
 				"id=" + id +
 				", propietario=" + propietario +
-				", tipo=" + tipo +
 				", nombre='" + nombre + '\'' +
 				'}';
 	}

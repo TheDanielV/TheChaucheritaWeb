@@ -12,13 +12,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="UPDATE: MovimientoController y Categoria duda">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarTransferencia.jsp" afterDir="false" />
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="CU:Ingres, Egreso, transferencia: Vistas SM">
+      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/CategoriaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACategoriaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/CuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/CuentaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/DAOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/CuentaTipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/TipoCategoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPADAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPADAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" afterDir="false" />
     </list>
@@ -30,10 +39,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="Jsp File" />
         <option value="JUnit4 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,28 +66,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/danie/eclipse-workspace/TheChaucheritaWeb/src/main/webapp/vista",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.14760147",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/eclipse-workspace/TheChaucheritaWeb/src/main/webapp/vista&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.14760147&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="modelo.entidades" />
@@ -99,6 +109,7 @@
       <recent name="modelo.entidades" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="modelo.jpa" />
       <recent name="controlador" />
     </key>
   </component>
@@ -283,7 +294,8 @@
       <workItem from="1692796306246" duration="10000" />
       <workItem from="1692810889045" duration="2929000" />
       <workItem from="1692827144231" duration="1195000" />
-      <workItem from="1693078678132" duration="14824000" />
+      <workItem from="1693078678132" duration="15713000" />
+      <workItem from="1693099161314" duration="3457000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -333,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693091075733</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CU:Ingres, Egreso, transferencia: Vistas SM">
+      <option name="closed" value="true" />
+      <created>1693093853111</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693093853111</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +377,8 @@
     <MESSAGE value=" CuentaTotalDTO y mas" />
     <MESSAGE value="USE CASE Ingreso,Egreso y Transferencia v1" />
     <MESSAGE value="UPDATE: MovimientoController y Categoria duda" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATE: MovimientoController y Categoria duda" />
+    <MESSAGE value="CU:Ingres, Egreso, transferencia: Vistas SM" />
+    <option name="LAST_COMMIT_MESSAGE" value="CU:Ingres, Egreso, transferencia: Vistas SM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -370,6 +391,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/modelo/dao/GenericDAO.java</url>
+          <line>7</line>
+          <properties class="modelo.dao.GenericDAO" method="getAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,6 +5,7 @@ import modelo.dao.DAOFactory;
 import modelo.entidades.Categoria;
 import modelo.entidades.Cuenta;
 import modelo.entidades.Movimiento;
+import modelo.entidades.TipoCategoria;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -73,7 +74,7 @@ public class MovimientoController extends HttpServlet {
 		movimientoEgreso.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuentaOrigen));
 		movimientoEgreso.setDescripcion(descripcion);
 		//TODO Cambiar por la categoria deseada
-		movimientoEgreso.setCategoria(Categoria.TRANSFERENCIA);
+		//movimientoEgreso.setCategoria(Categoria.TRANSFERENCIA);
 
 		//Creacion del Objeto movimiento(Movimiento de transferencia 1(un egreso))
 		Movimiento movimientoIngreso = new Movimiento();
@@ -82,7 +83,7 @@ public class MovimientoController extends HttpServlet {
 		movimientoIngreso.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuentaDestino));
 		movimientoIngreso.setDescripcion(descripcion);
 		//TODO Cambiar por la categoria deseada
-		movimientoIngreso.setCategoria(Categoria.TRANSFERENCIA);
+		//movimientoIngreso.setCategoria(Categoria.TRANSFERENCIA);
 
 
 		//Guardado del movimiento
@@ -103,7 +104,7 @@ public class MovimientoController extends HttpServlet {
 		movimiento.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuenta));
 		movimiento.setDescripcion(descripcion);
 		//TODO: Cambiar por una forma de obtener dicha categoria
-		movimiento.setCategoria(Categoria.EDUCACION);
+		movimiento.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getById(idCategoria));
 
 
 		//Guardado del movimiento
@@ -125,7 +126,7 @@ public class MovimientoController extends HttpServlet {
 		movimiento.setFecha(fecha);
 		movimiento.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuenta));
 		movimiento.setDescripcion(descripcion);
-		movimiento.setCategoria(Categoria.EDUCACION);
+		movimiento.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getById(idCategoria));
 
 
 		//Guardado del movimiento
@@ -135,34 +136,21 @@ public class MovimientoController extends HttpServlet {
 
 	private void renderTransferencia(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//TODO:Cambiar por logica de categoria (Enum o clase) y seleccionar solo el tipo transferencia
-		List<Categoria> categorias = new ArrayList<>();
-		categorias.add(Categoria.TRANSPORTE);
-		categorias.add(Categoria.COMIDA);
-		categorias.add(Categoria.Personal);
 		request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAll());
-		request.setAttribute("categorias", categorias);
+		request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.TRANSFERENCIA));
 		request.getRequestDispatcher("/vista/registrarTransferencia.jsp").forward(request, response);
 	}
 
 	private void renderEgreso(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//TODO:Cambiar por logica de categoria (Enum o clase) y seleccionar solo el tipo EGRESO
-		List<Categoria> categorias = new ArrayList<>();
-		categorias.add(Categoria.TRANSPORTE);
-		categorias.add(Categoria.COMIDA);
-		categorias.add(Categoria.Personal);
 		request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAll());
-		request.setAttribute("categorias", categorias);
+		request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.EGRESO));
 		request.getRequestDispatcher("/vista/registrarEgreso.jsp").forward(request, response);
 
 	}
 
 	private void renderIngreso(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Categoria> categorias = new ArrayList<>();
-		categorias.add(Categoria.TRANSPORTE);
-		categorias.add(Categoria.COMIDA);
-		categorias.add(Categoria.Personal);
 		request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAll());
-		request.setAttribute("categorias", categorias);
+		request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.INGRESO));
 		request.getRequestDispatcher("/vista/registrarIngreso.jsp").forward(request, response);
 		//TODO: Redirect a la visualizacion de dashbord?
 

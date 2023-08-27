@@ -1,19 +1,29 @@
 package modelo.entidades;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
-public enum Categoria{
-    //TODO: categorias predefinidas? o como se manehjaran las categorias
-    COMIDA(1, "Comida"), TRANSPORTE(2, "Transporte"), EDUCACION(3,"Educacion"), Personal(4,"Cuidado Personal"), TRANSFERENCIA(4, "Transferencia");
+@Entity
+@Table(name = "Categoria")
+public class Categoria implements Serializable{
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private  String tipo;
+    @Column(name = "nombre")
+    private  String nombre;
+    @Enumerated(EnumType.STRING)
+    private TipoCategoria tipo;
 
-    Categoria() {
+
+
+    public Categoria( String nombre, TipoCategoria tipo) {
+        this.nombre = nombre;
+        this.tipo = tipo;
     }
 
-    Categoria(int id, String tipo) {
-        this.id = id;
-        this.tipo = tipo;
+    public Categoria() {
+
     }
 
     public int getId() {
@@ -24,19 +34,19 @@ public enum Categoria{
         this.id = id;
     }
 
-    public String getTipo() {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public TipoCategoria getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoCategoria tipo) {
         this.tipo = tipo;
-    }
-
-    @Override
-    public String toString() {
-        return "Categoria{" +
-                "id=" + id +
-                ", tipo='" + tipo + '\'' +
-                '}';
     }
 }

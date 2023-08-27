@@ -20,7 +20,9 @@ public class  Movimiento implements Serializable{
 	private double monto;
 	@Column(name = "descripcion")
 	private String descripcion;
-	@Enumerated(EnumType.STRING)
+
+	@ManyToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "categoria")
 	private Categoria categoria;
 
 	@Temporal(TemporalType.DATE)

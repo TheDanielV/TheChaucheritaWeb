@@ -51,8 +51,8 @@ public class LoginController extends HttpServlet {
 		}
 	}
 
-	private void inicio(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.sendRedirect("jsp/login.jsp");
+	private void inicio(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request.getRequestDispatcher("/vista/login.jsp").forward(request, response);
 	}
 	
 	private void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
