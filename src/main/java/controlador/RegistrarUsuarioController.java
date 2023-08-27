@@ -56,9 +56,8 @@ public class RegistrarUsuarioController extends HttpServlet {
 		UsuarioDAO usuarioDAO = DAOFactory.getFactory().getUsuarioDAO();
 		Usuario usuarioExistente = usuarioDAO.validarUsuarioParaRegistrar(nombre, clave);
 
-		if (usuarioExistente == null) {
-			Usuario nuevoUsuario = new Usuario(nombre, clave);
-			usuarioDAO.create(nuevoUsuario);
+		if (usuarioExistente != null) {
+			usuarioDAO.create(usuarioExistente);
 			response.sendRedirect("LoginController?ruta=inicio");
 		} else {
 			request.setAttribute("mensajeError", "Usuario ya registrado.");
