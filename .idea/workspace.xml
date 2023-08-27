@@ -12,24 +12,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="CU:Ingres, Egreso, transferencia: Vistas SM">
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/CategoriaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACategoriaDAO.java" afterDir="false" />
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Categoria Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/CategoriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/CategoriaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/CuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/CuentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/CuentaTipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/TipoCategoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACategoriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACategoriaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPADAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPADAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarTransferencia.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarTransferencia.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registroUsuarios.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registroUsuarios.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +292,8 @@
       <workItem from="1692810889045" duration="2929000" />
       <workItem from="1692827144231" duration="1195000" />
       <workItem from="1693078678132" duration="15713000" />
-      <workItem from="1693099161314" duration="3457000" />
+      <workItem from="1693099161314" duration="4847000" />
+      <workItem from="1693104198347" duration="1604000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -353,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693093853111</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Categoria Update">
+      <option name="closed" value="true" />
+      <created>1693102767576</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693102767576</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +384,8 @@
     <MESSAGE value="USE CASE Ingreso,Egreso y Transferencia v1" />
     <MESSAGE value="UPDATE: MovimientoController y Categoria duda" />
     <MESSAGE value="CU:Ingres, Egreso, transferencia: Vistas SM" />
-    <option name="LAST_COMMIT_MESSAGE" value="CU:Ingres, Egreso, transferencia: Vistas SM" />
+    <MESSAGE value="Categoria Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Categoria Update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

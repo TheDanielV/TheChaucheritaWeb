@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface CategoriaDAO extends GenericDAO<Categoria, Integer>{
     public List<Categoria> gellAllByCategoria(TipoCategoria tipoCategoria);
+    public Categoria getCategoriaTransferencia();
 }

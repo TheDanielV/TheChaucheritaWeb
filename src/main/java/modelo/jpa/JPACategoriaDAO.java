@@ -25,6 +25,13 @@ public class JPACategoriaDAO extends JPAGenericDAO<Categoria, Integer> implement
 				.setParameter("tipo", tipoCategoria)
 				.getResultList();
 	}
+	public Categoria getCategoriaTransferencia() {
+
+		String jpql = "SELECT c FROM Categoria c WHERE c.tipo = :tipo";
+		return  em.createQuery(jpql, Categoria.class)
+				.setParameter("tipo", TipoCategoria.TRANSFERENCIA)
+				.getSingleResult();
+	}
 
 	@Override
 	public List<Categoria> getAll() {

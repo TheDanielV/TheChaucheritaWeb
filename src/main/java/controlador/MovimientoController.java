@@ -74,7 +74,7 @@ public class MovimientoController extends HttpServlet {
 		movimientoEgreso.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuentaOrigen));
 		movimientoEgreso.setDescripcion(descripcion);
 		//TODO Cambiar por la categoria deseada
-		//movimientoEgreso.setCategoria(Categoria.TRANSFERENCIA);
+		movimientoEgreso.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getCategoriaTransferencia());
 
 		//Creacion del Objeto movimiento(Movimiento de transferencia 1(un egreso))
 		Movimiento movimientoIngreso = new Movimiento();
@@ -83,7 +83,7 @@ public class MovimientoController extends HttpServlet {
 		movimientoIngreso.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuentaDestino));
 		movimientoIngreso.setDescripcion(descripcion);
 		//TODO Cambiar por la categoria deseada
-		//movimientoIngreso.setCategoria(Categoria.TRANSFERENCIA);
+		movimientoIngreso.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getCategoriaTransferencia());
 
 
 		//Guardado del movimiento

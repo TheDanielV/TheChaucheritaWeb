@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
+<%@include file="templates/banner_inside.html"%>
 
 <div class="container mt-5">
     <h1 class="mb-4">Seleccione la cuenta </h1>

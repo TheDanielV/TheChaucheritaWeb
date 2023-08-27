@@ -28,7 +28,7 @@
 				<div id="formContent">
 
 					<!-- Login Form -->
-					<form action="../LoginController?ruta=login" method="POST">
+					<form action="LoginController?ruta=login" method="POST">
 						<fieldset>
 							<legend>Login</legend>
 
@@ -49,7 +49,7 @@
 						<p><c:out value="${mensajeError}"/><p>
 					</div>
 
-					<form action="../LoginController?ruta=registrar" method="GET">
+					<form action="LoginController?ruta=registrar" method="Post">
 						<fieldset>
 							<input type="submit" value="¿No está registrado? Hágalo aquí." />
 						</fieldset>

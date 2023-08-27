@@ -20,9 +20,10 @@ public class JPACuentaDAO extends JPAGenericDAO<Cuenta, Integer> implements Cuen
 		return null;
 	}
 
+	@Override
+	public List<Cuenta> getAllByID(int id_usuario) {
+		return null;
+	}
 
-	
-	
-	
 
 }
