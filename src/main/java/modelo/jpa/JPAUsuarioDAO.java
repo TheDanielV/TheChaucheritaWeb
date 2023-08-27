@@ -18,8 +18,15 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 		Query query = em.createQuery(sentencia);
 		query.setParameter("nombre", nombre);
 		query.setParameter("clave", clave);
+		
+		Usuario usuarioAutorizado = null;
 
-		Usuario usuarioAutorizado = (Usuario) query.getSingleResult();
+		try {
+			usuarioAutorizado = (Usuario) query.getSingleResult();
+		} catch (javax.persistence.NoResultException e) {
+			usuarioAutorizado = null;
+			System.out.println("El usuario no existe en la base de datos. Error: " + e);
+		}
 		return usuarioAutorizado;
 	}
 
