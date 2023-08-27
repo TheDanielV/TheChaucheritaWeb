@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Ingreso de dinero</title>
+    <title>Egreso de dinero</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -10,9 +10,9 @@
 
 
 <div class="container mt-5">
-    <h1 class="mb-4">Seleccione su la cuenta </h1>
+    <h1 class="mb-4">Seleccione la cuenta </h1>
 
-    <form id="formularioPedido" action="MovimientoController?ruta=confirmarIngreso" method="post">
+    <form id="formularioPedido" action="MovimientoController?ruta=confirmarEgreso" method="post">
         <div class="form-group">
             <label for="cuenta">Cuentas:</label>
             <select class="form-control" name="cuenta" id="cuenta">
@@ -38,7 +38,7 @@
         <input type="text" name="desc" id="desc" class="form-control"/><br>
 
         <button type="submit" id="confirmarIngreso" class="btn btn-primary">
-            <span class="material-icons"></span> Registrar Ingreso
+            <span class="material-icons"></span> Registrar Egreso
         </button>
     </form>
 

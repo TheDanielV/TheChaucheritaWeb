@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public enum Categoria{
     //TODO: categorias predefinidas? o como se manehjaran las categorias
-    COMIDA(1, "Comida"), TRANSPORTE(2, "Transporte"), EDUCACION(3,"Educacion"), Personal(4,"Cuidado Personal");
+    COMIDA(1, "Comida"), TRANSPORTE(2, "Transporte"), EDUCACION(3,"Educacion"), Personal(4,"Cuidado Personal"), TRANSFERENCIA(4, "Transferencia");
     private int id;
     private  String tipo;
 

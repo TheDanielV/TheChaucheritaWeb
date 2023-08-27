@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Ingreso de dinero</title>
+    <title>Transferencia</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -10,35 +10,34 @@
 
 
 <div class="container mt-5">
-    <h1 class="mb-4">Seleccione su la cuenta </h1>
+    <h1 class="mb-4">Seleccione las Cuentas </h1>
 
-    <form id="formularioPedido" action="MovimientoController?ruta=confirmarIngreso" method="post">
+    <form id="formularioPedido" action="MovimientoController?ruta=confirmarTransferencia" method="post">
         <div class="form-group">
-            <label for="cuenta">Cuentas:</label>
-            <select class="form-control" name="cuenta" id="cuenta">
+            <label for="cuentaOrigen">Cuentas:</label>
+            <select class="form-control" name="cuentaOrigen" id="cuentaOrigen">
+                <c:forEach items="${cuentas}" var="cuenta">
+                    <option value="${cuenta.id}">${cuenta.nombre}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cuentaDestino">Cuentas:</label>
+            <select class="form-control" name="cuentaDestino" id="cuentaDestino">
                 <c:forEach items="${cuentas}" var="cuenta">
                     <option value="${cuenta.id}">${cuenta.nombre}</option>
                 </c:forEach>
             </select>
         </div>
 
-        <!-- Campo de selección de  Categoria-->
-        <div class="form-group">
-            <label for="categoriaID">Categorias:</label>
-            <select class="form-control" name="categoriaID" id="categoriaID">
-                <c:forEach items="${categorias}" var="categoria">
-                    <option value="${categoria.id}">${categoria.tipo}</option>
-                </c:forEach>
-            </select>
-        </div>
         <label for="monto">Monto</label> <br>
         <input type="text" name="monto" id="monto" class="form-control" oninput="validarNumero(this)">
         <p id="mensajeError"></p>
-        <label for="desc">Descripcion</label> <br>
-        <input type="text" name="desc" id="desc" class="form-control"/><br>
+
+        <input type="hidden" name="desc" id="desc" value="Transferencia entre cuentas" class="form-control"/><br>
 
         <button type="submit" id="confirmarIngreso" class="btn btn-primary">
-            <span class="material-icons"></span> Registrar Ingreso
+            <span class="material-icons"></span> Registrar Transferencia
         </button>
     </form>
 

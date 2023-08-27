@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Index - ProyectoWebGrupo6</title>
-    <meta http-equiv="refresh" content="0; url=MovimientoController?ruta=nuevoIngreso" />
+    <meta http-equiv="refresh" content="0; url=MovimientoController?ruta=nuevoEgreso" />
 
 </head>
 <body>

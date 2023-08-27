@@ -12,27 +12,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="USE CASE Ingreso,Egreso y Transferencia v1">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/listarpersona.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/vistaDashboard.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java" afterDir="false" />
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="UPDATE: MovimientoController y Categoria duda">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarTransferencia.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/RegistrarMovimientosController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/TipoMovimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/TipoMovimiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAGenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAGenericDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAUsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAUsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,9 +254,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CuentaTest.cuentaTest" />
         <item itemvalue="JUnit.MovimientoTest.getMovmentTest" />
         <item itemvalue="JUnit.CuentaTest.getAllCuentasTest" />
-        <item itemvalue="JUnit.CuentaTest.cuentaTest" />
         <item itemvalue="JUnit.UsuarioTest" />
       </list>
     </recent_temporary>
@@ -295,7 +283,7 @@
       <workItem from="1692796306246" duration="10000" />
       <workItem from="1692810889045" duration="2929000" />
       <workItem from="1692827144231" duration="1195000" />
-      <workItem from="1693078678132" duration="11975000" />
+      <workItem from="1693078678132" duration="14824000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -337,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693083818114</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="UPDATE: MovimientoController y Categoria duda">
+      <option name="closed" value="true" />
+      <created>1693091075733</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693091075733</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +356,8 @@
     <MESSAGE value="correccion de errores" />
     <MESSAGE value=" CuentaTotalDTO y mas" />
     <MESSAGE value="USE CASE Ingreso,Egreso y Transferencia v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="USE CASE Ingreso,Egreso y Transferencia v1" />
+    <MESSAGE value="UPDATE: MovimientoController y Categoria duda" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATE: MovimientoController y Categoria duda" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
