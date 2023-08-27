@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import modelo.dao.CuentaDAO;
 import modelo.dao.DAOFactory;
@@ -42,43 +43,61 @@ public class CuentaController extends HttpServlet {
 			case "error":
 				System.out.println("No debe llegar acá nunca ;(");
 				break;
+			case "verCuentas":
+				this.verCuentas(request,response);
 			default:
 				break;
 		}
 	}
 
+	private void verCuentas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Obtenemos los parametros que nesecitamos y lo senviamos a la vista
+
+		HttpSession session = request.getSession(true);
+		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		if(usuario != null) {
+			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
+			request.getRequestDispatcher("/vista/ListaCuentas.jsp").forward(request, response);
+		}else response.sendRedirect("LoginController?ruta=inicio");
+
+	}
+
 	private void eliminarCuenta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer idCuenta = request.getParameter("id_cuenta"); // Suponiendo que el identificador se pasa como "id_cuenta"
-        
-        if (idCuenta != null) {
-            int id_cuenta = idCuenta;
-            cuentaDAO.delete(id_cuenta);  
-            
-            // Redirigir a la vista que muestra todas las cuentas
-            response.sendRedirect("/jsp/ListaCuentas.jsp");
-        } else {
-            // Manejo de error si no se proporciona un ID válido
-            request.setAttribute("error", "ID de cuenta no proporcionado");
-            request.getRequestDispatcher("jsp/Error.jsp").forward(request, response);
-        }
+
+		HttpSession session = request.getSession(true);
+		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		Integer idCuenta = Integer.parseInt(request.getParameter("id_cuenta")); // Suponiendo que el identificador se pasa como "id_cuenta"
+		if(usuario != null) {
+			if (idCuenta != null) {
+				DAOFactory.getFactory().getCuentaDAO().deleteByID(idCuenta);
+				// Redirigir a la vista que muestra todas las cuentas
+				response.sendRedirect("/jsp/ListaCuentas.jsp");
+			} else {
+				// Manejo de error si no se proporciona un ID válido
+				request.setAttribute("error", "ID de cuenta no proporcionado");
+				request.getRequestDispatcher("jsp/Error.jsp").forward(request, response);
+			}
+		}
     }
 
 	private void crearCuenta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nombreCuenta = request.getParameter("nombreCuenta");
+		HttpSession session = request.getSession(true);
+		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		System.out.println(usuario);
+		if(usuario != null) {
+			String nombreCuenta = request.getParameter("nombreCuenta");
+			Cuenta cuenta = new Cuenta();
+			cuenta.setNombre(nombreCuenta);
+			cuenta.setPropietario(usuario);
 
-		CuentaDAO cuentaDAO = DAOFactory.getFactory().getCuentaDAO();
-		Cuenta cuentaCreada = cuentaDAO.crearNuevaCuenta(nombreCuenta);
-        
-        if (nombreCuenta != null && !nombreCuenta.trim().isEmpty()) {
-            Cuenta nuevaCuenta = new Cuenta(nombreCuenta);
-            cuentaDAO.create(nuevaCuenta);  
-            
-            response.sendRedirect("VerMovimientosController?ruta=dashboard"); 
-        } else {
-            // Manejar el caso donde el nombreCuenta no es válido o ya esta creado, quizá redirigir a una página de error o mostrar un mensaje
-            request.setAttribute("mensajeError", "Error en la cuenta");
-            request.getRequestDispatcher("/jsp/FormularioAgregarCuenta.jsp").forward(request, response);
-        }
-	
+			if (nombreCuenta != null && !nombreCuenta.trim().isEmpty()) {
+				DAOFactory.getFactory().getCuentaDAO().create(cuenta);
+				response.sendRedirect("VerMovimientosController?ruta=dashboard");
+			} else {
+				// Manejar el caso donde el nombreCuenta no es válido o ya esta creado, quizá redirigir a una página de error o mostrar un mensaje
+				request.setAttribute("mensajeError", "Error en la cuenta");
+				request.getRequestDispatcher("/jsp/FormularioAgregarCuenta.jsp").forward(request, response);
+			}
+		}else response.sendRedirect("LoginController?ruta=inicio");
 }
 }

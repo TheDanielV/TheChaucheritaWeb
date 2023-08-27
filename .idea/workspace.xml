@@ -12,22 +12,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Ingreso, Egreso, Transferencia Final">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/dashboard.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCategoria.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCuenta.jsp" afterDir="false" />
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="CU: Ver movimientos y plnatilla dashoard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/InicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/CuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/CuentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACategoriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACategoriaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/CuentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/CuentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dto/CategoriaTotalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dto/CategoriaTotalDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dto/CuentaTotalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dto/CuentaTotalDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAMovimientoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAMovimientoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/listarpersona.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/ListaCuentas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/ListaCuentas.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCuenta.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCuenta.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/vistaDashboard.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,28 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/danie/eclipse-workspace/TheChaucheritaWeb/src/main/webapp/vista/templates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.14760147",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/eclipse-workspace/TheChaucheritaWeb/src/main/webapp/vista/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.14760147&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="modelo.entidades" />
@@ -144,6 +141,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MovimientoTest.categoriaDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheChaucheritaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modelo.entidades.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="modelo.entidades" />
+      <option name="MAIN_CLASS_NAME" value="modelo.entidades.MovimientoTest" />
+      <option name="METHOD_NAME" value="categoriaDTOTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MovimientoTest.getMovmentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheChaucheritaWeb" />
       <extension name="coverage">
@@ -160,17 +173,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsuarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovimientoTest.movmentDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheChaucheritaWeb" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="entidades.*" />
+          <option name="PATTERN" value="modelo.entidades.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="entidades" />
-      <option name="MAIN_CLASS_NAME" value="entidades.UsuarioTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="modelo.entidades" />
+      <option name="MAIN_CLASS_NAME" value="modelo.entidades.MovimientoTest" />
+      <option name="METHOD_NAME" value="movmentDtoTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -263,10 +277,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MovimientoTest.categoriaDTOTest" />
+        <item itemvalue="JUnit.MovimientoTest.movmentDtoTest" />
         <item itemvalue="JUnit.CuentaTest.getAllCuentasTest" />
         <item itemvalue="JUnit.CuentaTest.cuentaTest" />
         <item itemvalue="JUnit.MovimientoTest.getMovmentTest" />
-        <item itemvalue="JUnit.UsuarioTest" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +309,10 @@
       <workItem from="1692827144231" duration="1195000" />
       <workItem from="1693078678132" duration="15713000" />
       <workItem from="1693099161314" duration="4847000" />
-      <workItem from="1693104198347" duration="9776000" />
+      <workItem from="1693104198347" duration="9979000" />
+      <workItem from="1693170123254" duration="2882000" />
+      <workItem from="1693174588547" duration="3668000" />
+      <workItem from="1693179016209" duration="1701000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -376,7 +394,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693107437009</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="CU: Ver movimientos y plnatilla dashoard">
+      <option name="closed" value="true" />
+      <created>1693114040574</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693114040574</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +430,8 @@
     <MESSAGE value="Categoria Update" />
     <MESSAGE value="Vista Update" />
     <MESSAGE value="Ingreso, Egreso, Transferencia Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ingreso, Egreso, Transferencia Final" />
+    <MESSAGE value="CU: Ver movimientos y plnatilla dashoard" />
+    <option name="LAST_COMMIT_MESSAGE" value="CU: Ver movimientos y plnatilla dashoard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -412,7 +439,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java</url>
           <line>9</line>
-          <properties class="modelo.entidades.MovimientoTest" method="getMovmentTest">
+          <properties class="modelo.entidades.MovimientoTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

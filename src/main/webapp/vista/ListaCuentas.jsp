@@ -27,13 +27,13 @@
             </tr>
         </thead>
         <tbody>
-            <% for (Cuenta cuenta : listaCuentas) { %>
+        <c:forEach items="${cuentas}" var="cuenta">
                 <tr>
-                    <td><%= cuenta.getId() %></td>
-                    <td><%= cuenta.getNombre() %></td>
-                    <td><a href="/CuentaController?action=eliminar&idCuenta=<%= cuenta.getId() %>">Eliminar</a></td>
+                    <td>${cuenta.getId()}</td>
+                    <td>${cuenta.getNombre()}</td>
+                    <td><a href="/CuentaController?action=eliminar&idCuenta=${cuenta.getId()}">Eliminar</a></td>
                 </tr>
-            <% } %>
+        </c:forEach>
         </tbody>
     </table>
 

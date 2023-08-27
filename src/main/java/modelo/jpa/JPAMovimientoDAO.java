@@ -7,6 +7,7 @@ import modelo.entidades.Movimiento;
 import modelo.entidades.TipoMovimiento;
 
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @SuppressWarnings("ALL")
@@ -19,19 +20,28 @@ public class JPAMovimientoDAO extends JPAGenericDAO<Movimiento, Integer> impleme
 
 	@Override
 	public List<CuentaTotalDTO> getCuentasConTotal(int id_usuario) {
-		String consulta = "SELECT m.cuenta.id, m.cuenta.nombre, sum(m.monto) as total from movimiento m where m.cuenta.propietario.id= :usuario";
-		Query query = em.createQuery(consulta);
-		query.setParameter("usuario",id_usuario);
-		return (List<CuentaTotalDTO>) query.getResultList();
+		String consulta = "SELECT NEW modelo.dto.CuentaTotalDTO(c.id, c.nombre, SUM(m.monto)) " +
+				"FROM Movimiento m " +
+				"JOIN m.cuenta c " +
+				"WHERE c.propietario.id = :usuario " +
+				"GROUP BY c.id, c.nombre";
+
+		TypedQuery<CuentaTotalDTO> query = em.createQuery(consulta, CuentaTotalDTO.class);
+		query.setParameter("usuario", id_usuario);
+
+		return query.getResultList();
 	}
 
 	@Override
 	public List<CategoriaTotalDTO> getCategoriasConTotal(int id_usuario) {
-		String consulta = "SELECT m.categoria.id, m.categoria.nombre, SUM(m.monto) as total FROM Movimiento m WHERE m.cuenta.propietario.id = :usuario GROUP BY m.categoria.id, m.categoria.nombre";
-		Query query = em.createQuery(consulta);
+		String consulta = "SELECT NEW modelo.dto.CategoriaTotalDTO(m.categoria.id, m.categoria.nombre, SUM(m.monto)) " +
+				"FROM Movimiento m " +
+				"WHERE m.cuenta.propietario.id = :usuario " +
+				"GROUP BY m.categoria.id, m.categoria.nombre";
+
+		TypedQuery<CategoriaTotalDTO> query = em.createQuery(consulta, CategoriaTotalDTO.class);
 		query.setParameter("usuario", id_usuario);
-		
-		
+
 		return query.getResultList();
 	}
 

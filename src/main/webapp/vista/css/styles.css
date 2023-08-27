@@ -1,3 +1,7 @@
-.navbar-grey{
-    background-color: #2A2D2F;
+*{
+    background-color: #f0f0f0; /* Gris claro */
+}
+.custom-div {
+    border-radius: 20px; /* Esquinas redondeadas */
+    background-color: #fff; /* Fondo blanco */
 }

@@ -4,35 +4,54 @@
 <head>
     <title>Egreso de dinero</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <%@include file="templates/banner_inside.html"%>
 
-<div class="container mt-5">
-    <!-- el mostrar cuentas y categorias se podria hacer coon un foreach, cada uno(similar a ver movimientos)-->
-    <h1 class="mb-4">Sus Cuentas </h1>
+<div class="container mt-4 ">
+<!-- Se tedran las cuentas existentes por usuario -->
+    <div class="row">
 
-        <form id="formVerCuenta" action="VerMovimientosController?ruta=verPorCuenta" method="post">
-            <!-- se enviara el parametro idCuenta del DTO obtenino y se enviara por post -->
+        <div class="custom-div col-md-6">
+            <h1 class="mb-4">Resumen de sus Cuentas </h1>
 
-            <input type="hidden" name="idCuenta" id="idCuenta" value="1"/><br>
+            <c:forEach items="${cuentas}" var="cuenta">
 
-            <button type="submit" id="verCuena" class="btn btn-primary">
-                <span class="material-icons"></span> Ver Movimientos
-            </button>
-        </form>
+                <h1 class="mb-2">Cuenta: ${cuenta.getNombre()} </h1>
+                <h1 class="mb-2">Total: ${cuenta.getTotal()}$ </h1>
+                <form id="formVerCuenta" action="VerMovimientosController?ruta=verPorCuenta" method="post">
+                    <!-- se enviara el parametro idCuenta del DTO obtenino y se enviara por post -->
 
-    <h1 class="mb-4">Categorias </h1>
+                    <input type="hidden" name="idCuenta" id="idCuenta" value="${cuenta.getId()}"/><br>
 
-    <form id="formularioPedido" action="VerMovimientosController?ruta=verPorCategoria" method="post">
-        <!-- se enviara el paraametro IdCategoria del DTO obtenino y se enviara por post (---3 es de prueba---)-->
-        <input type="hidden" name="idCategoria" id="idCategoria" value="3"/><br>
+                    <button type="submit" id="verCuena" class="btn btn-primary">
+                        <span class="material-icons"></span> Ver Movimientos
+                    </button>
+                </form>
 
-        <button type="submit" id="verCategoria" class="btn btn-primary">
-            <span class="material-icons"></span> Ver Movimientos
-        </button>
-    </form>
+            </c:forEach>
+        </div>
+
+
+        <div class="custom-div col-md-6">
+            <h1 class="mb-4">Resumen por Categorias </h1>
+            <c:forEach items="${categorias}" var="categoria">
+
+                <h1 class="mb-2"> ${categoria.getNombre()} </h1>
+                <h1 class="mb-2"> ${categoria.getTotal()} </h1>
+                <form id="formularioPedido" action="VerMovimientosController?ruta=verPorCategoria" method="post">
+                    <!-- se enviara el paraametro IdCategoria del DTO obtenino y se enviara por post (---3 es de prueba---)-->
+                    <input type="hidden" name="idCategoria" id="idCategoria" value="${categoria.getId()}"/><br>
+
+                    <button type="submit" id="verCategoria" class="btn btn-primary">
+                        <span class="material-icons"></span> Ver Movimientos
+                    </button>
+                </form>
+            </c:forEach>
+        </div>
+    </div>
 
 </div>
 </body>

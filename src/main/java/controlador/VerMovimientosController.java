@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Date;
 
 @WebServlet("/VerMovimientosController")
 public class VerMovimientosController extends HttpServlet {
@@ -47,9 +48,12 @@ public class VerMovimientosController extends HttpServlet {
 		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
 		if(usuario == null) {
+
 			response.sendRedirect("LoginController?ruta=inicio");
 		}else {
 			//TODO: Logica que permita obtener los datos del dto y mandarlo al dashboard
+			request.setAttribute("cuentas", DAOFactory.getFactory().getMovimientoDAO().getCuentasConTotal(usuario.getId()));
+			request.setAttribute("categorias", DAOFactory.getFactory().getMovimientoDAO().getCategoriasConTotal(usuario.getId()));
 			request.getRequestDispatcher("/vista/dashboard.jsp").forward(request,response);
 		}
 	}
@@ -72,8 +76,11 @@ public class VerMovimientosController extends HttpServlet {
 		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
 		if(usuario!=null) {
+
 			Integer idCuenta = Integer.parseInt(request.getParameter("idCuenta"));
+
 			System.out.println(DAOFactory.getFactory().getMovimientoDAO().getAllByCuenta(idCuenta));
+
 			request.setAttribute("movimientos", DAOFactory.getFactory().getMovimientoDAO().getAllByCuenta(idCuenta));
 			request.getRequestDispatcher("/vista/movimientoCuenta.jsp").forward(request,response);
 

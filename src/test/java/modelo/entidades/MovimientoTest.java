@@ -7,8 +7,13 @@ import static org.junit.Assert.*;
 
 public class MovimientoTest {
     @Test
-    public void getMovmentTest(){
-        System.out.println(DAOFactory.getFactory().getMovimientoDAO().getById(2).getCategoria());
+    public void movmentDtoTest(){
+        System.out.println(DAOFactory.getFactory().getMovimientoDAO().getCuentasConTotal(1));
+
+    }
+    @Test
+    public void categoriaDTOTest(){
+        System.out.println(DAOFactory.getFactory().getMovimientoDAO().getCategoriasConTotal(1));
 
     }
 

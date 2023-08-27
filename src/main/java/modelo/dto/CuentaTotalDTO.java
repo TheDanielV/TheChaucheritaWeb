@@ -10,6 +10,12 @@ public class CuentaTotalDTO implements Serializable {
     public CuentaTotalDTO()  {
     }
 
+    public CuentaTotalDTO(int id, String nombre, double total) {
+        this.id = id;
+        this.nombre = nombre;
+        this.total = total;
+    }
+
     public int getId() {
         return id;
     }
@@ -32,5 +38,14 @@ public class CuentaTotalDTO implements Serializable {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    @Override
+    public String toString() {
+        return "CuentaTotalDTO{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", total=" + total +
+                '}';
     }
 }

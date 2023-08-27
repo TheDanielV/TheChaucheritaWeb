@@ -31,7 +31,9 @@
 
         <c:forEach var="indice" begin="0" end="${movimientos.size()}" step="1">
             <c:set var="movimiento" value="${movimientos[indice]}" />
-        <fmt:formatDate value="${movimiento.getFecha()}" pattern="dd/MM/yyyy" var="fechaFormateada" />
+
+
+            <fmt:formatDate value="${movimiento.getFecha()}" pattern="dd/MM/yyyy" var="fechaFormateada" />
 
                 <tr>
                     <td>${movimiento.getCuenta().getNombre()}</td>
