@@ -30,6 +30,22 @@ public class JPAMovimientoDAO extends JPAGenericDAO<Movimiento, Integer> impleme
 		return null;
 	}
 
+    @Override
+    public List<Movimiento> getAllByCuenta(int id_cuenta) {
+        String consulta = "SELECT m FROM Movimiento m WHERE m.cuenta.id = :idCuenta";
+        Query query = em.createQuery(consulta);
+        query.setParameter("idCuenta", id_cuenta);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Movimiento> getAllByCategoria(int id_categoria) {
+        String consulta = "SELECT m FROM Movimiento m WHERE m.categoria.id = :idCategoria";
+        Query query = em.createQuery(consulta);
+        query.setParameter("idCategoria", id_categoria);
+        return query.getResultList();
+    }
+
 	@Override
 	public void ajustarSaldo(Movimiento movimiento) {
 
