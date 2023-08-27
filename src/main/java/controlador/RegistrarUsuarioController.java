@@ -28,7 +28,7 @@ public class RegistrarUsuarioController extends HttpServlet {
 
 	private void ruteador(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-		String ruta = (request.getParameter("ruta") == null) ? "init" : request.getParameter("ruta");
+		String ruta = (request.getParameter("ruta") == null) ? "inicio" : request.getParameter("ruta");
 		switch (ruta) {
 			case "inicio":
 				this.inicio(request, response);
