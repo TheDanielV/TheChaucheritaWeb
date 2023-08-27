@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		<!DOCTYPE html>
 		<html>
 
@@ -46,11 +46,13 @@
 					</form>
 
 					<div class="text-center">
-						<p><c:out value="${mensajeError}"/><p>
+						<p>
+							<c:out value="${mensajeError}" />
+						<p>
 					</div>
 
 					<div>
-						<a href="login.jsp">Regresar al Menu principal</a>
+						<a href="LoginController?ruta=inicio">Regresar a Login</a>
 					</div>
 
 				</div>
