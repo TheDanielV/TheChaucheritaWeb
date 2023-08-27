@@ -22,7 +22,9 @@ public class JPACuentaDAO extends JPAGenericDAO<Cuenta, Integer> implements Cuen
 
 	@Override
 	public List<Cuenta> getAllByID(int id_usuario) {
-		return null;
+		Query query = em.createQuery("SELECT c FROM Cuenta c WHERE c.propietario = :propietario", Cuenta.class);
+		query.setParameter("propietario", id_usuario);
+		return query.getResultList();
 	}
 
 

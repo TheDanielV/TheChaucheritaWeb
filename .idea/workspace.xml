@@ -12,21 +12,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Categoria Update">
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Vista Update">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/CategoriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/CategoriaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/CuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/CuentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACategoriaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACategoriaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarTransferencia.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarTransferencia.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registroUsuarios.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registroUsuarios.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +284,7 @@
       <workItem from="1692827144231" duration="1195000" />
       <workItem from="1693078678132" duration="15713000" />
       <workItem from="1693099161314" duration="4847000" />
-      <workItem from="1693104198347" duration="1604000" />
+      <workItem from="1693104198347" duration="3179000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -359,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693102767576</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Vista Update">
+      <option name="closed" value="true" />
+      <created>1693105829627</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693105829627</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +384,8 @@
     <MESSAGE value="UPDATE: MovimientoController y Categoria duda" />
     <MESSAGE value="CU:Ingres, Egreso, transferencia: Vistas SM" />
     <MESSAGE value="Categoria Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Categoria Update" />
+    <MESSAGE value="Vista Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vista Update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
