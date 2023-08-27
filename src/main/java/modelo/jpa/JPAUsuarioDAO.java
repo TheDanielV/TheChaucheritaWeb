@@ -32,7 +32,6 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 
 	@Override
 	public Usuario validarUsuarioParaRegistrar(String nombre, String clave) {
-		// First, let's see if the user already exists
 		String sentencia = "SELECT u FROM Usuario u WHERE u.nombre= :nombre";
 
 		Query query = em.createQuery(sentencia);
@@ -40,9 +39,11 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 
 		Usuario usuarioExistente = null;
 		try {
+			System.out.println(usuarioExistente);
 			usuarioExistente = (Usuario) query.getSingleResult();
 		} catch (javax.persistence.NoResultException e) {
-			System.out.println("Usuario no encontrado en la tabla. Listo para ingresar nuevo usuario");
+			usuarioExistente = null;
+			System.out.println("Usuario no encontrado en la tabla. Listo para ingresar nuevo usuario. Error: " + e);
 		}
 
 		if (usuarioExistente != null) {
@@ -50,7 +51,6 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 		}
 
 		Usuario nuevoUsuario = new Usuario(nombre, clave);
-		this.create(nuevoUsuario);
 
 		return nuevoUsuario;
 	}
