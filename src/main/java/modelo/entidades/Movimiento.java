@@ -106,10 +106,14 @@ public class  Movimiento implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Movimiento [id=" + id + ", monto=" + monto + ", fecha=" + fecha + ", cuenta"
-				+ cuenta + ", destino=" + "]";
+		return "Movimiento{" +
+				"id=" + id +
+				", cuenta=" + cuenta +
+				", monto=" + monto +
+				", descripcion='" + descripcion + '\'' +
+				", categoria=" + categoria +
+				", fecha=" + fecha +
+				", movimiento=" + movimiento +
+				'}';
 	}
-	
-	
-	
 }

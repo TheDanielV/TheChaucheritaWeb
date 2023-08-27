@@ -93,6 +93,7 @@ public class MovimientoController extends HttpServlet {
 
 		//Guardado del movimiento
 		DAOFactory.getFactory().getMovimientoDAO().creaarTransferencia(movimientoIngreso,movimientoEgreso);
+		response.sendRedirect("VerMovimientosController?ruta=dashboard");
 	}
 
 	private void registrarEegreso(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -120,6 +121,7 @@ public class MovimientoController extends HttpServlet {
 
 		//Guardado del movimiento
 		DAOFactory.getFactory().getMovimientoDAO().crearEgreso(movimiento);
+		response.sendRedirect("VerMovimientosController?ruta=dashboard");
 
 	}
 
@@ -149,7 +151,7 @@ public class MovimientoController extends HttpServlet {
 
 		//Guardado del movimiento
 		DAOFactory.getFactory().getMovimientoDAO().crearIngreso(movimiento);
-		//TODO: Redirect a la visualizacion de dashbord?
+		response.sendRedirect("VerMovimientosController?ruta=dashboard");
 	}
 
 	private void renderTransferencia(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -157,7 +159,7 @@ public class MovimientoController extends HttpServlet {
 		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
 		if(usuario!=null) {
-		request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario.getId()));
+		request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
 		request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.TRANSFERENCIA));
 		request.getRequestDispatcher("/vista/registrarTransferencia.jsp").forward(request, response);
 		}else response.sendRedirect("LoginController?ruta=inicio");
@@ -168,7 +170,7 @@ public class MovimientoController extends HttpServlet {
 		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
 		if(usuario!=null) {
-			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario.getId()));
+			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
 			request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.EGRESO));
 			request.getRequestDispatcher("/vista/registrarEgreso.jsp").forward(request, response);
 		}else response.sendRedirect("LoginController?ruta=inicio");
@@ -179,7 +181,7 @@ public class MovimientoController extends HttpServlet {
 		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
 		if(usuario!=null) {
-			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario.getId()));
+			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
 			request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.INGRESO));
 			request.getRequestDispatcher("/vista/registrarIngreso.jsp").forward(request, response);
 			//TODO: Redirect a la visualizacion de dashbord?

@@ -65,7 +65,7 @@ public class LoginController extends HttpServlet {
 
 			HttpSession session = request.getSession();
 			session.setAttribute("usuarioLogeado", usuarioAutenticado);
-			response.sendRedirect("VerMovimientoController?ruta=inicio");
+			response.sendRedirect("VerMovimientosController?ruta=dashboard");
 			return;
 
 		} else {

@@ -4,6 +4,7 @@ package modelo.jpa;
 import modelo.dao.CuentaDAO;
 import modelo.entidades.Cuenta;
 import modelo.entidades.TipoCategoria;
+import modelo.entidades.Usuario;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -21,9 +22,9 @@ public class JPACuentaDAO extends JPAGenericDAO<Cuenta, Integer> implements Cuen
 	}
 
 	@Override
-	public List<Cuenta> getAllByID(int id_usuario) {
+	public List<Cuenta> getAllByID(Usuario propietario) {
 		Query query = em.createQuery("SELECT c FROM Cuenta c WHERE c.propietario = :propietario", Cuenta.class);
-		query.setParameter("propietario", id_usuario);
+		query.setParameter("propietario", propietario);
 		return query.getResultList();
 	}
 
