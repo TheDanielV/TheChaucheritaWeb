@@ -49,11 +49,7 @@
 						<p><c:out value="${mensajeError}"/><p>
 					</div>
 
-					<form action="LoginController?ruta=registrar" method="Post">
-						<fieldset>
-							<input type="submit" value="¿No está registrado? Hágalo aquí." />
-						</fieldset>
-					</form>
+					<a href="LoginController?ruta=registrar">¿No está registrado? Hágalo aquí.</a>
 
 				</div>
 			</div>
