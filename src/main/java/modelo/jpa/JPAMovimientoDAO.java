@@ -27,7 +27,12 @@ public class JPAMovimientoDAO extends JPAGenericDAO<Movimiento, Integer> impleme
 
 	@Override
 	public List<CategoriaTotalDTO> getCategoriasConTotal(int id_usuario) {
-		return null;
+		String consulta = "SELECT m.categoria.id, m.categoria.nombre, SUM(m.monto) as total FROM Movimiento m WHERE m.cuenta.propietario.id = :usuario GROUP BY m.categoria.id, m.categoria.nombre";
+		Query query = em.createQuery(consulta);
+		query.setParameter("usuario", id_usuario);
+		
+		
+		return query.getResultList();
 	}
 
     @Override
