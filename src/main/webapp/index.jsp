@@ -1,15 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Index - ProyectoWebGrupo6</title>
-    <meta http-equiv="refresh" content="0; url=MovimientoController?ruta=nuevoEgreso" />
+    <!DOCTYPE html>
+    <html>
 
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <meta http-equiv="refresh" content="0; url=LoginController?ruta=inicio" />
+    </head>
 
-</h1>
-<br/>
+    <body>
 
-</body>
-</html>
+    </body>
+
+    </html>
