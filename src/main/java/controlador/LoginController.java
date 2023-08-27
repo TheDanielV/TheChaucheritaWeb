@@ -65,14 +65,13 @@ public class LoginController extends HttpServlet {
 
 			HttpSession session = request.getSession();
 			session.setAttribute("usuarioLogeado", usuarioAutenticado);
-
 			response.sendRedirect("VerMovimientoController?ruta=ejemploTocaCambiar");
 			return;
 
 		} else {
 
 			request.setAttribute("mensajeError", "Nombre o clave incorrectas.");
-            request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/vista/login.jsp").forward(request, response);
 		}
 	}
 
@@ -80,8 +79,8 @@ public class LoginController extends HttpServlet {
 		response.sendRedirect("RegistrarUsuarioController?ruta=inicio");
 	}
 
-	private void salir(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void salir(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		request.getSession().invalidate();
-		response.sendRedirect("jsp/login.jsp");
+		request.getRequestDispatcher("/vista/login.jsp").forward(request, response);
 	}
 }

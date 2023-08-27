@@ -44,8 +44,8 @@ public class RegistrarUsuarioController extends HttpServlet {
 		}
 	}
 
-	private void inicio(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.sendRedirect("/jsp/registroUsuarios.jsp");
+	private void inicio(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request.getRequestDispatcher("/vista/registroUsuarios.jsp").forward(request, response);
 	}
 
 	private void registrarUsuario(HttpServletRequest request, HttpServletResponse response)
@@ -62,7 +62,7 @@ public class RegistrarUsuarioController extends HttpServlet {
 			response.sendRedirect("LoginController?ruta=inicio");
 		} else {
 			request.setAttribute("mensajeError", "Usuario ya registrado.");
-			request.getRequestDispatcher("/jsp/registroUsuarios.jsp").forward(request, response);
+			request.getRequestDispatcher("/vista/registroUsuarios.jsp").forward(request, response);
 		}
 	}
 }
