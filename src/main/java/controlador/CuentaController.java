@@ -45,6 +45,8 @@ public class CuentaController extends HttpServlet {
 				break;
 			case "verCuentas":
 				this.verCuentas(request,response);
+			case "mostrarFormularioCuentas":
+				this.mostrarFormularioCuentas(request,response);
 			default:
 				break;
 		}
@@ -58,6 +60,17 @@ public class CuentaController extends HttpServlet {
 		if(usuario != null) {
 			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
 			request.getRequestDispatcher("/vista/ListaCuentas.jsp").forward(request, response);
+		}else response.sendRedirect("LoginController?ruta=inicio");
+
+	}
+
+	private void mostrarFormularioCuentas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Obtenemos los parametros que nesecitamos y lo senviamos a la vista
+
+		HttpSession session = request.getSession(true);
+		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		if(usuario != null) {
+			request.getRequestDispatcher("/vista/formularioAgregarCuenta.jsp").forward(request, response);
 		}else response.sendRedirect("LoginController?ruta=inicio");
 
 	}

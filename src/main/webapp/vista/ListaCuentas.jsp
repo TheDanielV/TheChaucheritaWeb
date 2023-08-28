@@ -18,6 +18,10 @@
 	
 	<h1>Listado de Cuentas</h1>
 
+    <div>
+        <a href="CuentaController?ruta=mostrarFormularioCuentas">Agregar cuenta</a>
+    </div>
+
     <table class="dark">
         <thead class="thead-dark">
             <tr>
