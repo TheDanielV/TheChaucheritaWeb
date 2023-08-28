@@ -29,24 +29,22 @@
         <tbody>
         <c:set var="movimientos" value="${movimientos}" />
 
-        <c:forEach var="indice" begin="0" end="${movimientos.size()}" step="1">
+        <c:forEach var="indice" begin="0" end="${movimientos.size()-1}" step="1">
             <c:set var="movimiento" value="${movimientos[indice]}" />
 
 
             <fmt:formatDate value="${movimiento.getFecha()}" pattern="dd/MM/yyyy" var="fechaFormateada" />
 
-                <tr>
+                    <tr>
                     <td>${movimiento.getCuenta().getNombre()}</td>
                     <td>${movimiento.getMonto()}</td>
                     <td>${movimiento.getDescripcion()}</td>
                     <td>${movimiento.getCategoria().getNombre()}</td>
                     <td>${fechaFormateada}</td>
                     <td>${movimiento.getMovimiento().getNombreTipo()}</td>
+                    </tr>
 
-        </c:forEach>
-                </tr>
-
-
+                    </c:forEach>
 
         </tbody>
     </table>

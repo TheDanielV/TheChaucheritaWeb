@@ -7,11 +7,8 @@ public class CuentaTest {
     @Test
     public void cuentaTest(){
         Cuenta cuenta = new Cuenta();
-        Usuario usuario = new Usuario();
-        usuario.setNombre("Daniel");
-        usuario.setClave("daniel123");
-        cuenta.setPropietario(usuario);
-        cuenta.setNombre("Bolsillo");
+        cuenta.setPropietario(DAOFactory.getFactory().getUsuarioDAO().getById(1));
+        cuenta.setNombre("Banco");
         DAOFactory.getFactory().getCuentaDAO().create(cuenta);
     }
     @Test

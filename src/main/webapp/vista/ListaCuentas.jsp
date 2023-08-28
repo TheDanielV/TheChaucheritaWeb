@@ -19,7 +19,7 @@
 	<h1>Listado de Cuentas</h1>
 
     <div>
-        <a href="CuentaController?ruta=mostrarFormularioCuentas">Agregar cuenta</a>
+        <a href="CuentaController?ruta=registrarCuenta">Agregar cuenta</a>
     </div>
 
     <table class="dark">
@@ -35,7 +35,7 @@
                 <tr>
                     <td>${cuenta.getId()}</td>
                     <td>${cuenta.getNombre()}</td>
-                    <td><a href="CuentaController?action=eliminar&idCuenta=${cuenta.getId()}">Eliminar</a></td>
+                    <td><a href="CuentaController?ruta=eliminarCuenta&idCuenta=${cuenta.getId()}">Eliminar</a></td>
                 </tr>
         </c:forEach>
         </tbody>

@@ -46,9 +46,7 @@ public class VerMovimientosController extends HttpServlet {
 	private void renderDashboard(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		HttpSession session = request.getSession(true);
 		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
-		System.out.println(usuario);
 		if(usuario == null) {
-
 			response.sendRedirect("LoginController?ruta=inicio");
 		}else {
 			//TODO: Logica que permita obtener los datos del dto y mandarlo al dashboard

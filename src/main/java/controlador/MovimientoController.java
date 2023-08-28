@@ -184,7 +184,6 @@ public class MovimientoController extends HttpServlet {
 			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
 			request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.INGRESO));
 			request.getRequestDispatcher("/vista/registrarIngreso.jsp").forward(request, response);
-			//TODO: Redirect a la visualizacion de dashbord?
 		}else response.sendRedirect("LoginController?ruta=inicio");
 	}
 

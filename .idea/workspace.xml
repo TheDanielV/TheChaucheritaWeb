@@ -12,19 +12,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="CU: Ver movimientos y plnatilla dashoard">
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Dashboard and CuentaController update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controlador/CuentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/CuentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dto/CategoriaTotalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dto/CategoriaTotalDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dto/CuentaTotalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dto/CuentaTotalDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAMovimientoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAMovimientoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Cuenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/ListaCuentas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/ListaCuentas.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/dashboard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCuenta.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCuenta.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,10 +273,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CuentaTest.cuentaTest" />
         <item itemvalue="JUnit.MovimientoTest.categoriaDTOTest" />
         <item itemvalue="JUnit.MovimientoTest.movmentDtoTest" />
         <item itemvalue="JUnit.CuentaTest.getAllCuentasTest" />
-        <item itemvalue="JUnit.CuentaTest.cuentaTest" />
         <item itemvalue="JUnit.MovimientoTest.getMovmentTest" />
       </list>
     </recent_temporary>
@@ -312,7 +308,7 @@
       <workItem from="1693104198347" duration="9979000" />
       <workItem from="1693170123254" duration="2882000" />
       <workItem from="1693174588547" duration="3668000" />
-      <workItem from="1693179016209" duration="1701000" />
+      <workItem from="1693179016209" duration="5129000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -402,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693114040574</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Dashboard and CuentaController update">
+      <option name="closed" value="true" />
+      <created>1693180762092</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693180762092</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +435,8 @@
     <MESSAGE value="Vista Update" />
     <MESSAGE value="Ingreso, Egreso, Transferencia Final" />
     <MESSAGE value="CU: Ver movimientos y plnatilla dashoard" />
-    <option name="LAST_COMMIT_MESSAGE" value="CU: Ver movimientos y plnatilla dashoard" />
+    <MESSAGE value="Dashboard and CuentaController update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard and CuentaController update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
