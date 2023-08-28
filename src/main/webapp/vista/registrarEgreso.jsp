@@ -17,7 +17,7 @@
             <label for="cuenta">Cuentas:</label>
             <select class="form-control" name="cuenta" id="cuenta">
                 <c:forEach items="${cuentas}" var="cuenta">
-                    <option value="${cuenta.id}">${cuenta.nombre}(${cuenta.getid})</option>
+                    <option value="${cuenta.id}">${cuenta.nombre}(${cuenta.id})</option>
                 </c:forEach>
             </select>
         </div>
