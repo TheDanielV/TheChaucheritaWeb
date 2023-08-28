@@ -17,7 +17,7 @@
             <label for="cuentaOrigen">Cuentas:</label>
             <select class="form-control" name="cuentaOrigen" id="cuentaOrigen">
                 <c:forEach items="${cuentas}" var="cuenta">
-                    <option value="${cuenta.id}">${cuenta.nombre}</option>
+                    <option value="${cuenta.id}">${cuenta.nombre}(${cuenta.getid})</option>
                 </c:forEach>
             </select>
         </div>
@@ -25,7 +25,7 @@
             <label for="cuentaDestino">Cuentas:</label>
             <select class="form-control" name="cuentaDestino" id="cuentaDestino">
                 <c:forEach items="${cuentas}" var="cuenta">
-                    <option value="${cuenta.id}">${cuenta.nombre}</option>
+                    <option value="${cuenta.id}">${cuenta.nombre}(${cuenta.getid})</option>
                 </c:forEach>
             </select>
         </div>

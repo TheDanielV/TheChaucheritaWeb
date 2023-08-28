@@ -9,6 +9,7 @@
 </head>
 <body>
 <%@include file="templates/banner_inside.html"%>
+<%@include file="templates/bannerMes.jsp"%>
 
 <div class="container mt-4 ">
 <!-- Se tedran las cuentas existentes por usuario -->
@@ -21,7 +22,7 @@
 
                 <h1 class="mb-2">Cuenta: ${cuenta.getNombre()} </h1>
                 <h1 class="mb-2">Total: ${cuenta.getTotal()}$ </h1>
-                <form id="formVerCuenta" action="VerMovimientosController?ruta=verPorCuenta" method="post">
+                <form id="formVerCuenta" action="VerMovimientosController?ruta=verPorCuenta&mesDado=${mesDado}" method="post">
                     <!-- se enviara el parametro idCuenta del DTO obtenino y se enviara por post -->
 
                     <input type="hidden" name="idCuenta" id="idCuenta" value="${cuenta.getId()}"/><br>
@@ -41,7 +42,7 @@
 
                 <h1 class="mb-2"> ${categoria.getNombre()} </h1>
                 <h1 class="mb-2"> ${categoria.getTotal()} </h1>
-                <form id="formularioPedido" action="VerMovimientosController?ruta=verPorCategoria" method="post">
+                <form id="formularioPedido" action="VerMovimientosController?ruta=verPorCategoria&mesDado=${mesDado}" method="post">
                     <!-- se enviara el paraametro IdCategoria del DTO obtenino y se enviara por post (---3 es de prueba---)-->
                     <input type="hidden" name="idCategoria" id="idCategoria" value="${categoria.getId()}"/><br>
 

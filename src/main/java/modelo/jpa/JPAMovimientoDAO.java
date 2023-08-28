@@ -34,10 +34,10 @@ public class JPAMovimientoDAO extends JPAGenericDAO<Movimiento, Integer> impleme
 
 	@Override
 	public List<CategoriaTotalDTO> getCategoriasConTotal(int id_usuario) {
-		String consulta = "SELECT NEW modelo.dto.CategoriaTotalDTO(m.categoria.id, m.categoria.nombre, SUM(m.monto)) " +
+		String consulta = "SELECT NEW modelo.dto.CategoriaTotalDTO(m.categoria.id, m.categoria.nombre, SUM(m.monto), m.fecha) " +
 				"FROM Movimiento m " +
 				"WHERE m.cuenta.propietario.id = :usuario " +
-				"GROUP BY m.categoria.id, m.categoria.nombre";
+				"GROUP BY m.categoria.id, m.categoria.nombre, m.fecha";
 
 		TypedQuery<CategoriaTotalDTO> query = em.createQuery(consulta, CategoriaTotalDTO.class);
 		query.setParameter("usuario", id_usuario);

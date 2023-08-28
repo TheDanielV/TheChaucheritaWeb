@@ -4,6 +4,8 @@ package controlador;
 
 
 import modelo.dao.DAOFactory;
+import modelo.dto.CategoriaTotalDTO;
+import modelo.entidades.Movimiento;
 import modelo.entidades.Usuario;
 
 import javax.servlet.ServletException;
@@ -13,7 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @WebServlet("/VerMovimientosController")
 public class VerMovimientosController extends HttpServlet {
@@ -49,9 +52,36 @@ public class VerMovimientosController extends HttpServlet {
 		if(usuario == null) {
 			response.sendRedirect("LoginController?ruta=inicio");
 		}else {
-			//TODO: Logica que permita obtener los datos del dto y mandarlo al dashboard
+			String mesDado = request.getParameter("mesDado");
+			// Crear una lista de meses
+
+
+
+			// Crea un formato para el nombre del mes en el idioma deseado (por ejemplo, español)
+			SimpleDateFormat formatoMes = getSimpleDateFormat();
+			String nombreMes;
+			//Obtendremos las categorias dadas por un mes
+			List<CategoriaTotalDTO> categorias = new ArrayList<>();
+
+			if (mesDado == null){
+				Date fechaActual = new Date();
+				// Obtén el nombre del mes en formato "Enero"
+				 nombreMes = formatoMes.format(fechaActual);
+
+			}else {
+				nombreMes = mesDado;
+			}
+
+			for (CategoriaTotalDTO caategoria:
+					DAOFactory.getFactory().getMovimientoDAO().getCategoriasConTotal(usuario.getId())) {
+				if(formatoMes.format(caategoria.getMes()).equals(nombreMes)){
+					categorias.add(caategoria);
+				}
+			}
+			request.setAttribute("mesDado", nombreMes);
+			request.setAttribute("meses", getMeses());
 			request.setAttribute("cuentas", DAOFactory.getFactory().getMovimientoDAO().getCuentasConTotal(usuario.getId()));
-			request.setAttribute("categorias", DAOFactory.getFactory().getMovimientoDAO().getCategoriasConTotal(usuario.getId()));
+			request.setAttribute("categorias", categorias);
 			request.getRequestDispatcher("/vista/dashboard.jsp").forward(request,response);
 		}
 	}
@@ -62,7 +92,30 @@ public class VerMovimientosController extends HttpServlet {
 		System.out.println(usuario);
 		if(usuario!=null) {
 			Integer idCategoria = Integer.parseInt(request.getParameter("idCategoria"));
-			System.out.println(DAOFactory.getFactory().getMovimientoDAO().getAllByCuenta(idCategoria));
+
+			String mesDado =request.getParameter("mesDado");
+
+			SimpleDateFormat formatoMes = getSimpleDateFormat();
+			String nombreMes;
+			//Obtendremos las categorias dadas por un mes
+			List<Movimiento> movimientos = new ArrayList<>();
+
+			if (mesDado == null){
+				Date fechaActual = new Date();
+				// Obtén el nombre del mes en formato "Enero"
+				nombreMes = formatoMes.format(fechaActual);
+
+			}else {
+				nombreMes = mesDado;
+			}
+
+			for (Movimiento movimiento:
+					DAOFactory.getFactory().getMovimientoDAO().getAllByCategoria(idCategoria)) {
+				if(formatoMes.format(movimiento.getFecha()).equals(nombreMes)){
+					movimientos.add(movimiento);
+				}
+			}
+			request.setAttribute("mesDado", nombreMes);
 			request.setAttribute("movimientos", DAOFactory.getFactory().getMovimientoDAO().getAllByCategoria(idCategoria));
 			request.getRequestDispatcher("/vista/movimientoCategoria.jsp").forward(request,response);
 
@@ -76,13 +129,54 @@ public class VerMovimientosController extends HttpServlet {
 		if(usuario!=null) {
 
 			Integer idCuenta = Integer.parseInt(request.getParameter("idCuenta"));
+			String mesDado =request.getParameter("mesDado");
 
-			System.out.println(DAOFactory.getFactory().getMovimientoDAO().getAllByCuenta(idCuenta));
+			SimpleDateFormat formatoMes = getSimpleDateFormat();
+			String nombreMes;
+			//Obtendremos las categorias dadas por un mes
+			List<Movimiento> movimientos = new ArrayList<>();
 
-			request.setAttribute("movimientos", DAOFactory.getFactory().getMovimientoDAO().getAllByCuenta(idCuenta));
+			if (mesDado == null){
+				Date fechaActual = new Date();
+				// Obtén el nombre del mes en formato "Enero"
+				nombreMes = formatoMes.format(fechaActual);
+
+			}else {
+				nombreMes = mesDado;
+			}
+
+			for (Movimiento movimiento:
+					DAOFactory.getFactory().getMovimientoDAO().getAllByCuenta(idCuenta)) {
+				if(formatoMes.format(movimiento.getFecha()).equals(mesDado)){
+					movimientos.add(movimiento);
+				}
+			}
+			request.setAttribute("mesDado", nombreMes);
+			request.setAttribute("movimientos", movimientos);
 			request.getRequestDispatcher("/vista/movimientoCuenta.jsp").forward(request,response);
 
 		}else response.sendRedirect("LoginController?ruta=inicio");
+	}
+
+	private static SimpleDateFormat getSimpleDateFormat() {
+		SimpleDateFormat formatoMes = new SimpleDateFormat("MMMM", new Locale("es", "ES"));
+		return formatoMes;
+	}
+	private static List<String > getMeses(){
+		List<String> meses = new ArrayList<>();
+		meses.add("enero");
+		meses.add("febrero");
+		meses.add("marzo");
+		meses.add("abril");
+		meses.add("mayo");
+		meses.add("junio");
+		meses.add("julio");
+		meses.add("agosto");
+		meses.add("septiembre");
+		meses.add("octubre");
+		meses.add("noviembre");
+		meses.add("diciembre");
+		return  meses;
 	}
 
 
