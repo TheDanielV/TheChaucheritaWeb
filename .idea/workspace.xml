@@ -12,22 +12,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Seleccion by mes dashboard.jsp">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="final commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dto/CategoriaTotalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dto/CategoriaTotalDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAMovimientoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAMovimientoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/ListaCuentas.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/ListaCuentas.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCategoria.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCategoria.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCuenta.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/movimientoCuenta.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarEgreso.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarIngreso.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registrarTransferencia.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registrarTransferencia.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/bannerMes.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,7 +304,7 @@
       <workItem from="1693170123254" duration="2882000" />
       <workItem from="1693174588547" duration="3668000" />
       <workItem from="1693179016209" duration="5552000" />
-      <workItem from="1693191005934" duration="6836000" />
+      <workItem from="1693191005934" duration="7282000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -422,7 +410,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693187279837</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="final commit">
+      <option name="closed" value="true" />
+      <created>1693197881414</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1693197881414</updated>
+    </task>
+    <task id="LOCAL-00015" summary="final commit">
+      <option name="closed" value="true" />
+      <created>1693197884868</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1693197884868</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +458,8 @@
     <MESSAGE value="Dashboard and CuentaController update" />
     <MESSAGE value="Vistas update" />
     <MESSAGE value="Seleccion by mes dashboard.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seleccion by mes dashboard.jsp" />
+    <MESSAGE value="final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="final commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
