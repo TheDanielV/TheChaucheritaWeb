@@ -162,7 +162,7 @@ public class VerMovimientosController extends HttpServlet {
 		SimpleDateFormat formatoMes = new SimpleDateFormat("MMMM", new Locale("es", "ES"));
 		return formatoMes;
 	}
-	private static List<String > getMeses(){
+	private static List<String> getMeses(){
 		List<String> meses = new ArrayList<>();
 		meses.add("enero");
 		meses.add("febrero");
