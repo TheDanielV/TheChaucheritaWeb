@@ -35,7 +35,7 @@
                 <tr>
                     <td>${cuenta.getId()}</td>
                     <td>${cuenta.getNombre()}</td>
-                    <td><a href="/CuentaController?action=eliminar&idCuenta=${cuenta.getId()}">Eliminar</a></td>
+                    <td><a href="CuentaController?action=eliminar&idCuenta=${cuenta.getId()}">Eliminar</a></td>
                 </tr>
         </c:forEach>
         </tbody>

@@ -84,11 +84,11 @@ public class CuentaController extends HttpServlet {
 			if (idCuenta != null) {
 				DAOFactory.getFactory().getCuentaDAO().deleteByID(idCuenta);
 				// Redirigir a la vista que muestra todas las cuentas
-				response.sendRedirect("/jsp/ListaCuentas.jsp");
+				response.sendRedirect("/vista/ListaCuentas.jsp");
 			} else {
 				// Manejo de error si no se proporciona un ID válido
 				request.setAttribute("error", "ID de cuenta no proporcionado");
-				request.getRequestDispatcher("jsp/Error.jsp").forward(request, response);
+				request.getRequestDispatcher("/vista/Error.jsp").forward(request, response);
 			}
 		}
     }
@@ -109,7 +109,7 @@ public class CuentaController extends HttpServlet {
 			} else {
 				// Manejar el caso donde el nombreCuenta no es válido o ya esta creado, quizá redirigir a una página de error o mostrar un mensaje
 				request.setAttribute("mensajeError", "Error en la cuenta");
-				request.getRequestDispatcher("/jsp/formularioAgregarCuenta.jsp").forward(request, response);
+				request.getRequestDispatcher("/vista/formularioAgregarCuenta.jsp").forward(request, response);
 			}
 		}else response.sendRedirect("LoginController?ruta=inicio");
 }
