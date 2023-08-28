@@ -10,7 +10,7 @@
 </head>
 <body>
 <jsp:include page="/vista/templates/banner_inside.html"/>
-
+<h3>Viendo por mes: ${mesDado}</h3>
 <div class="container mt-5">
     <h1>Movimientos por categoria:
     </h1>

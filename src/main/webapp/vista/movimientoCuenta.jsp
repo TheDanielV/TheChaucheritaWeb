@@ -10,6 +10,7 @@
 </head>
 <body>
 <jsp:include page="/vista/templates/banner_inside.html"/>
+<h3>Viendo por mes: ${mesDado}</h3>
 
 <div class="container mt-5">
     <h1>Movimientos por cuenta:
@@ -29,7 +30,7 @@
         <tbody>
         <c:set var="movimientos" value="${movimientos}" />
 
-        <c:forEach var="indice" begin="0" end="${movimientos.size()-1}" step="1">
+        <c:forEach var="indice" begin="0" end="${movimientos.size()}" step="1">
             <c:set var="movimiento" value="${movimientos[indice]}" />
 
 
