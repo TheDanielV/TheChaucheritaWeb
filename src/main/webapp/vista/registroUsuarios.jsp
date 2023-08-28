@@ -40,7 +40,7 @@
 							<input type="password" id="clave" name="clave" />
 
 							<br><br><br>
-							<input type="submit" value="Registrar" />
+							<input type="submit" value="Registrar usuario" />
 							<br><br><br>
 						</fieldset>
 					</form>

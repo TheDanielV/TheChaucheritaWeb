@@ -96,7 +96,7 @@ public class CuentaController extends HttpServlet {
 			} else {
 				// Manejar el caso donde el nombreCuenta no es válido o ya esta creado, quizá redirigir a una página de error o mostrar un mensaje
 				request.setAttribute("mensajeError", "Error en la cuenta");
-				request.getRequestDispatcher("/jsp/FormularioAgregarCuenta.jsp").forward(request, response);
+				request.getRequestDispatcher("/jsp/formularioAgregarCuenta.jsp").forward(request, response);
 			}
 		}else response.sendRedirect("LoginController?ruta=inicio");
 }

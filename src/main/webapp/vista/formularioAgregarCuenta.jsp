@@ -19,7 +19,7 @@
 
 			<nav class="navbar navbar-dark bg-dark">
 				<div class="container-fluid">
-					<span class="navbar-brand mb-0 h1 ">Registro Usuarios</span>
+					<span class="navbar-brand mb-0 h1 ">Registro Cuentas</span>
 				</div>
 			</nav>
 
@@ -28,29 +28,21 @@
 				<div id="formContent">
 
 					<!-- Login Form -->
-					<form action="RegistrarUsuarioController?ruta=registrarUsuario" method="POST">
+					<form action="CuentaController?ruta=crearCuenta" method="POST">
 						<fieldset>
 							<legend>Registro</legend>
 
-							<p>Nombre</p>
-							<input type="text" id="nombre" name="nombre" />
-
-							<br>
-							<p>Clave</p>
-							<input type="password" id="clave" name="clave" />
+							<p>Nombre de la cuenta</p>
+							<input type="text" id="nombreCuenta" name="nombreCuenta" />
 
 							<br><br><br>
-							<input type="submit" value="Registrar" />
+							<input type="submit" value="Registrar cuenta" />
 							<br><br><br>
 						</fieldset>
 					</form>
 
 					<div class="text-center">
 						<p><c:out value="${mensajeError}"/><p>
-					</div>
-
-					<div>
-						<a href="LoginController?ruta=inicio">Regresar a Login</a>
 					</div>
 
 				</div>
