@@ -6,6 +6,7 @@ package controlador;
 import modelo.dao.DAOFactory;
 import modelo.dto.CategoriaTotalDTO;
 import modelo.entidades.Movimiento;
+import modelo.entidades.TipoCategoria;
 import modelo.entidades.Usuario;
 
 import javax.servlet.ServletException;
@@ -74,7 +75,7 @@ public class VerMovimientosController extends HttpServlet {
 
 			for (CategoriaTotalDTO caategoria:
 					DAOFactory.getFactory().getMovimientoDAO().getCategoriasConTotal(usuario.getId())) {
-				if(formatoMes.format(caategoria.getMes()).equals(nombreMes)){
+				if(formatoMes.format(caategoria.getMes()).equals(nombreMes) && !caategoria.getNombre().equals("Transferencia")){
 					categorias.add(caategoria);
 				}
 			}
@@ -111,12 +112,12 @@ public class VerMovimientosController extends HttpServlet {
 
 			for (Movimiento movimiento:
 					DAOFactory.getFactory().getMovimientoDAO().getAllByCategoria(idCategoria)) {
-				if(formatoMes.format(movimiento.getFecha()).equals(nombreMes)){
+				if(formatoMes.format(movimiento.getFecha()).equals(nombreMes) && movimiento.getCategoria().getTipo() != TipoCategoria.TRANSFERENCIA){
 					movimientos.add(movimiento);
 				}
 			}
 			request.setAttribute("mesDado", nombreMes);
-			request.setAttribute("movimientos", DAOFactory.getFactory().getMovimientoDAO().getAllByCategoria(idCategoria));
+			request.setAttribute("movimientos", movimientos);
 			request.getRequestDispatcher("/vista/movimientoCategoria.jsp").forward(request,response);
 
 		}else response.sendRedirect("LoginController?ruta=inicio");

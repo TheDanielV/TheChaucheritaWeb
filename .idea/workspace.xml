@@ -12,10 +12,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="final commit">
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="update bugs in vista registrarTransferencia.jsp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/templates/banner_inside.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registroUsuarios.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registroUsuarios.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,28 +55,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/danie/Downloads/Tarea19/Tarea19",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.14760147",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Downloads/Tarea19/Tarea19&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.14760147&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="modelo.entidades" />
@@ -132,6 +135,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CuentaTest.removeCuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheChaucheritaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modelo.entidades.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="modelo.entidades" />
+      <option name="MAIN_CLASS_NAME" value="modelo.entidades.CuentaTest" />
+      <option name="METHOD_NAME" value="removeCuentaTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MovimientoTest.categoriaDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheChaucheritaWeb" />
       <extension name="coverage">
@@ -143,22 +162,6 @@
       <option name="PACKAGE_NAME" value="modelo.entidades" />
       <option name="MAIN_CLASS_NAME" value="modelo.entidades.MovimientoTest" />
       <option name="METHOD_NAME" value="categoriaDTOTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MovimientoTest.getMovmentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheChaucheritaWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="modelo.entidades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="modelo.entidades" />
-      <option name="MAIN_CLASS_NAME" value="modelo.entidades.MovimientoTest" />
-      <option name="METHOD_NAME" value="getMovmentTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -268,11 +271,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CuentaTest.removeCuentaTest" />
         <item itemvalue="JUnit.CuentaTest.cuentaTest" />
         <item itemvalue="JUnit.MovimientoTest.categoriaDTOTest" />
         <item itemvalue="JUnit.MovimientoTest.movmentDtoTest" />
         <item itemvalue="JUnit.CuentaTest.getAllCuentasTest" />
-        <item itemvalue="JUnit.MovimientoTest.getMovmentTest" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +307,11 @@
       <workItem from="1693170123254" duration="2882000" />
       <workItem from="1693174588547" duration="3668000" />
       <workItem from="1693179016209" duration="5552000" />
-      <workItem from="1693191005934" duration="7282000" />
+      <workItem from="1693191005934" duration="7771000" />
+      <workItem from="1693199230258" duration="89000" />
+      <workItem from="1693199340063" duration="518000" />
+      <workItem from="1693239172829" duration="4939000" />
+      <workItem from="1693266873698" duration="2675000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -426,7 +433,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693197884868</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Last commit(ahora si(? )">
+      <option name="closed" value="true" />
+      <created>1693198323519</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1693198323519</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update bugs in vista registrarTransferencia.jsp">
+      <option name="closed" value="true" />
+      <created>1693198691362</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1693198691362</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +482,10 @@
     <MESSAGE value="Vistas update" />
     <MESSAGE value="Seleccion by mes dashboard.jsp" />
     <MESSAGE value="final commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="final commit" />
+    <MESSAGE value="Last commit(ahora si(? )" />
+    <MESSAGE value="update bugs in vista registro" />
+    <MESSAGE value="update bugs in vista registrarTransferencia.jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="update bugs in vista registrarTransferencia.jsp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -481,6 +507,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java</url>
+          <line>20</line>
+          <properties class="modelo.entidades.CuentaTest" method="removeCuentaTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
