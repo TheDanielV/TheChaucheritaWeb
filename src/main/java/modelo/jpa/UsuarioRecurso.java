@@ -23,16 +23,22 @@ import modelo.entidades.Usuario;
 @Path("/usuarios")
 public class UsuarioRecurso {
 	
-	@GET
+	@POST
     @Path("/registrar")
     @Consumes(MediaType.APPLICATION_JSON)
     public void guardarUsuario(@QueryParam("nombre") String nombre, @QueryParam("clave") String clave) {
+		
+		System.out.println("1");
         
         UsuarioDAO usuarioDAO = DAOFactory.getFactory().getUsuarioDAO();
+        System.out.println("2");
 		Usuario usuarioExistente = usuarioDAO.validarUsuarioParaRegistrar(nombre, clave);
 
+		System.out.println("3");
 		if (usuarioExistente != null) {
+			System.out.println("3.5");
 			usuarioDAO.create(usuarioExistente);
+			System.out.println("4");
 		} else {
 			System.out.println("Usuario ya registrado.");
 		}
