@@ -5,8 +5,6 @@ import modelo.dao.UsuarioDAO;
 import modelo.entidades.Usuario;
 
 import javax.persistence.Query;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements UsuarioDAO {
 
@@ -57,11 +55,5 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 
 		return nuevoUsuario;
 	}
-
-
-    @Override
-    public void addUsuario(Usuario usuario) {
-        this.em.persist(usuario);
-    }
 
 }
