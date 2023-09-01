@@ -23,7 +23,7 @@ import modelo.entidades.Usuario;
 @Path("/usuarios")
 public class UsuarioRecurso {
 	
-	@POST
+	@GET
     @Path("/registrar")
     @Consumes(MediaType.APPLICATION_JSON)
     public void guardarUsuario(@QueryParam("nombre") String nombre, @QueryParam("clave") String clave) {
