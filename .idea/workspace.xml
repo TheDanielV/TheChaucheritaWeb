@@ -12,12 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Issue: CU-Eliminar cuenta">
-      <change afterPath="$PROJECT_DIR$/src/main/java/serviciorest/UsuarioRecurso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Servicio Rest" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -287,6 +282,7 @@
       <workItem from="1693677111353" duration="245000" />
       <workItem from="1693677376135" duration="104000" />
       <workItem from="1693677619136" duration="127000" />
+      <workItem from="1693677800593" duration="398000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -432,7 +428,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693269875117</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Servicio Rest">
+      <option name="closed" value="true" />
+      <created>1693678158977</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1693678158977</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +473,8 @@
     <MESSAGE value="update bugs in vista registro" />
     <MESSAGE value="update bugs in vista registrarTransferencia.jsp" />
     <MESSAGE value="Issue: CU-Eliminar cuenta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Issue: CU-Eliminar cuenta" />
+    <MESSAGE value="Servicio Rest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Servicio Rest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
