@@ -12,13 +12,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="update bugs in vista registrarTransferencia.jsp">
+    <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Issue: CU-Eliminar cuenta">
+      <change afterPath="$PROJECT_DIR$/src/main/java/serviciorest/UsuarioRecurso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/VerMovimientosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPACuentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vista/registroUsuarios.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vista/registroUsuarios.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/CuentaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +101,15 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5">
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="CuentaTest.cuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheChaucheritaWeb" />
       <extension name="coverage">
@@ -119,22 +126,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CuentaTest.getAllCuentasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheChaucheritaWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="modelo.entidades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="modelo.entidades" />
-      <option name="MAIN_CLASS_NAME" value="modelo.entidades.CuentaTest" />
-      <option name="METHOD_NAME" value="getAllCuentasTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CuentaTest.removeCuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheChaucheritaWeb" />
       <extension name="coverage">
@@ -146,38 +137,6 @@
       <option name="PACKAGE_NAME" value="modelo.entidades" />
       <option name="MAIN_CLASS_NAME" value="modelo.entidades.CuentaTest" />
       <option name="METHOD_NAME" value="removeCuentaTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MovimientoTest.categoriaDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheChaucheritaWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="modelo.entidades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="modelo.entidades" />
-      <option name="MAIN_CLASS_NAME" value="modelo.entidades.MovimientoTest" />
-      <option name="METHOD_NAME" value="categoriaDTOTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MovimientoTest.movmentDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheChaucheritaWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="modelo.entidades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="modelo.entidades" />
-      <option name="MAIN_CLASS_NAME" value="modelo.entidades.MovimientoTest" />
-      <option name="METHOD_NAME" value="movmentDtoTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -271,11 +230,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #3" />
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="JUnit.CuentaTest.removeCuentaTest" />
         <item itemvalue="JUnit.CuentaTest.cuentaTest" />
-        <item itemvalue="JUnit.MovimientoTest.categoriaDTOTest" />
-        <item itemvalue="JUnit.MovimientoTest.movmentDtoTest" />
-        <item itemvalue="JUnit.CuentaTest.getAllCuentasTest" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +270,23 @@
       <workItem from="1693199230258" duration="89000" />
       <workItem from="1693199340063" duration="518000" />
       <workItem from="1693239172829" duration="4939000" />
-      <workItem from="1693266873698" duration="2675000" />
+      <workItem from="1693266873698" duration="3144000" />
+      <workItem from="1693351979943" duration="596000" />
+      <workItem from="1693355238121" duration="15000" />
+      <workItem from="1693359081686" duration="861000" />
+      <workItem from="1693361820875" duration="662000" />
+      <workItem from="1693365120846" duration="783000" />
+      <workItem from="1693369228196" duration="676000" />
+      <workItem from="1693398411323" duration="601000" />
+      <workItem from="1693411812709" duration="2881000" />
+      <workItem from="1693415014394" duration="154000" />
+      <workItem from="1693676076155" duration="95000" />
+      <workItem from="1693676203141" duration="41000" />
+      <workItem from="1693676260241" duration="256000" />
+      <workItem from="1693676571049" duration="439000" />
+      <workItem from="1693677111353" duration="245000" />
+      <workItem from="1693677376135" duration="104000" />
+      <workItem from="1693677619136" duration="127000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -449,7 +424,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693198691362</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Issue: CU-Eliminar cuenta">
+      <option name="closed" value="true" />
+      <created>1693269875117</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1693269875117</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +468,8 @@
     <MESSAGE value="Last commit(ahora si(? )" />
     <MESSAGE value="update bugs in vista registro" />
     <MESSAGE value="update bugs in vista registrarTransferencia.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="update bugs in vista registrarTransferencia.jsp" />
+    <MESSAGE value="Issue: CU-Eliminar cuenta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Issue: CU-Eliminar cuenta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
