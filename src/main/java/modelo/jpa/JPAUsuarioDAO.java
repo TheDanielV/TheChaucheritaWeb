@@ -1,6 +1,7 @@
 package modelo.jpa;
 
-import modelo.dao.DAOFactory;
+
+
 import modelo.dao.UsuarioDAO;
 import modelo.entidades.Usuario;
 
