@@ -231,11 +231,8 @@ public class MovimientoController extends HttpServlet {
 		String tipoMovimiento = request.getParameter("tipoMovimiento");
 		Integer idCuenta = Integer.parseInt(request.getParameter("idCuenta"));
 		String tipoJSP = request.getParameter("tipoJSP");
-		System.out.println("--------------------------------------");
-		System.out.println(tipoJSP);
+		tipoJSP = tipoJSP.replace("'", "");
 		String mesDado = request.getParameter("mesDado");
-		System.out.println("--------------------------------------");
-		System.out.println(mesDado);
 
 		if (usuario != null) {
 			if (!tipoMovimiento.equalsIgnoreCase("TRANSFERENCIA")) {
