@@ -92,7 +92,15 @@ public class VerMovimientosController extends HttpServlet {
 		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
 		if(usuario!=null) {
-			Integer idCategoria = Integer.parseInt(request.getParameter("idCategoria"));
+			
+			Integer idCategoria = null;
+
+			try {
+				idCategoria = Integer.parseInt(request.getParameter("idCategoria"));
+			} catch (Exception e) {
+				idCategoria = null;
+				System.out.println("idCategoria quedo null por que? - Error: " + e);
+			}
 
 			String mesDado =request.getParameter("mesDado");
 

@@ -230,44 +230,85 @@ public class MovimientoController extends HttpServlet {
 		Integer idMovimiento = Integer.parseInt(request.getParameter("idMovimiento"));
 		String tipoMovimiento = request.getParameter("tipoMovimiento");
 		Integer idCuenta = Integer.parseInt(request.getParameter("idCuenta"));
+		Integer idCategoria = Integer.parseInt(request.getParameter("idCategoria"));
 		String tipoJSP = request.getParameter("tipoJSP");
 		String mesDado = request.getParameter("mesDado");
 
 		if (usuario != null) {
-			if (!tipoMovimiento.equalsIgnoreCase("TRANSFERENCIA")) {
-				if (tipoMovimiento.equalsIgnoreCase("INGRESO")) {
-					Double totalCuenta = DAOFactory.getFactory().getCuentaDAO().getTotalCuenta(usuario.getId(),
-							idCuenta);
-					Double monto = DAOFactory.getFactory().getMovimientoDAO().getById(idMovimiento).getMonto();
-					if (monto > 0 && (monto <= totalCuenta)) {
+			if (tipoJSP.equalsIgnoreCase("verPorCuenta")) {
+				if (!tipoMovimiento.equalsIgnoreCase("TRANSFERENCIA")) {
+					if (tipoMovimiento.equalsIgnoreCase("INGRESO")) {
+						Double totalCuenta = DAOFactory.getFactory().getCuentaDAO().getTotalCuenta(usuario.getId(),
+								idCuenta);
+						Double monto = DAOFactory.getFactory().getMovimientoDAO().getById(idMovimiento).getMonto();
+						if (monto > 0 && (monto <= totalCuenta)) {
+							DAOFactory.getFactory().getMovimientoDAO().deleteByID(idMovimiento);
+
+							// Redirigir a la vista que muestra todos los movimientos
+							response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
+									+ "&idCuenta=" + idCuenta);
+						} else {
+							request.setAttribute("mensajeError",
+									"El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
+							// Redirigir a la vista que muestra todos los movimientos
+							request.getRequestDispatcher(
+									"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
+											+ "&idCuenta=" + idCuenta)
+									.forward(request, response);
+						}
+					} else {
+
 						DAOFactory.getFactory().getMovimientoDAO().deleteByID(idMovimiento);
 
 						// Redirigir a la vista que muestra todos los movimientos
-						
-						System.out.println("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta=" + idCuenta + "&idCuenta=" + idCuenta);
-						response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta=" + idCuenta);
+						response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
+								+ "&idCuenta=" + idCuenta);
+					}
+				} else {
+					// Arreglar para la transferencia la eliminacion
+					System.out.println("Esto es una transferencia");
+					response.sendRedirect(
+							"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta="
+									+ idCuenta);
+				}
+
+			} else {
+				if (!tipoMovimiento.equalsIgnoreCase("TRANSFERENCIA")) {
+					if (tipoMovimiento.equalsIgnoreCase("INGRESO")) {
+						Double totalCuenta = DAOFactory.getFactory().getCuentaDAO().getTotalCuenta(usuario.getId(),
+								idCuenta);
+						Double monto = DAOFactory.getFactory().getMovimientoDAO().getById(idMovimiento).getMonto();
+						if (monto > 0 && (monto <= totalCuenta)) {
+							DAOFactory.getFactory().getMovimientoDAO().deleteByID(idMovimiento);
+
+							// Redirigir a la vista que muestra todos los movimientos
+							response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
+									+ "&idCategoria=" + idCategoria);
+						} else {
+							request.setAttribute("mensajeError",
+									"El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
+							// Redirigir a la vista que muestra todos los movimientos
+							request.getRequestDispatcher(
+									"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
+											+ "&idCategoria=" + idCategoria)
+									.forward(request, response);
+						}
 					} else {
-		request.setAttribute("mensajeError",
-		"El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
-		System.out.println("El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
-		// Redirigir a la vista que muestra todos los movimientos
-		
-		System.out.println("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta=" + idCuenta);
-		response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta=" + idCuenta);
-	}
-} else {
-	
-	DAOFactory.getFactory().getMovimientoDAO().deleteByID(idMovimiento);
-	
-	// Redirigir a la vista que muestra todos los movimientos
-	System.out.println("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta=" + idCuenta);
-	response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta=" + idCuenta);
-}
-} else {
-	// Arreglar para la transferencia la eliminacion
-	System.out.println("Esto es una transferencia");
-	System.out.println("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta=" + idCuenta);
-				response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta=" + idCuenta);
+
+						DAOFactory.getFactory().getMovimientoDAO().deleteByID(idMovimiento);
+
+						// Redirigir a la vista que muestra todos los movimientos
+						response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
+								+ "&idCategoria=" + idCategoria);
+					}
+				} else {
+					// Arreglar para la transferencia la eliminacion
+					System.out.println("Esto es una transferencia");
+					response.sendRedirect(
+							"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCategoria="
+									+ idCategoria);
+				}
+
 			}
 		}
 	}
