@@ -53,7 +53,9 @@ public class MovimientoController extends HttpServlet {
 			case "confirmarTransferencia":
 				registrarTransferenci(request, response);
 				break;
-
+			case "eliminarMovimiento":
+				eliminarMovimiento(request, response);
+				break;
 		}
 
 	}
@@ -86,7 +88,7 @@ public class MovimientoController extends HttpServlet {
 			movimientoEgreso.setDescripcion(descripcion);
 			// TODO Cambiar por la categoria deseada
 			movimientoEgreso.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getCategoriaTransferencia());
-	
+
 			// Creacion del Objeto movimiento(Movimiento de transferencia 1(un egreso))
 			Movimiento movimientoIngreso = new Movimiento();
 			movimientoIngreso.setMonto(monto);
@@ -95,7 +97,7 @@ public class MovimientoController extends HttpServlet {
 			movimientoIngreso.setDescripcion(descripcion);
 			// TODO Cambiar por la categoria deseada
 			movimientoIngreso.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getCategoriaTransferencia());
-	
+
 			// Guardado del movimiento
 			DAOFactory.getFactory().getMovimientoDAO().creaarTransferencia(movimientoIngreso, movimientoEgreso);
 			response.sendRedirect("VerMovimientosController?ruta=dashboard");
@@ -218,6 +220,27 @@ public class MovimientoController extends HttpServlet {
 			request.getRequestDispatcher("/vista/registrarIngreso.jsp").forward(request, response);
 		} else
 			response.sendRedirect("LoginController?ruta=inicio");
+	}
+
+	private void eliminarMovimiento(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		HttpSession session = request.getSession(true);
+		Usuario usuario = (Usuario) session.getAttribute("usuarioLogeado");
+		Integer idMovimiento = Integer.parseInt(request.getParameter("idMovimiento"));
+		String tipoMovimiento = request.getParameter("tipoMovimiento");
+		if (usuario != null) {
+			if (!tipoMovimiento.equalsIgnoreCase("TRANSFERENCIA")) {
+				DAOFactory.getFactory().getMovimientoDAO().deleteByID(idMovimiento);
+				
+				// Redirigir a la vista que muestra todos los movimientos
+				response.sendRedirect("VerMovimientosController?ruta=dashboard");
+			} else {
+				//Arreglar para la transferencia la eliminacion
+				System.out.println("Esto es una transferencia");
+				response.sendRedirect("VerMovimientosController?ruta=dashboard");
+			}
+		}
 	}
 
 }
