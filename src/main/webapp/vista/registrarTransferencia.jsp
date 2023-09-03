@@ -41,6 +41,10 @@
         </button>
     </form>
 
+    <div class="text-center">
+        <p><c:out value="${mensajeError}"/><p>
+    </div>
+
 </div>
 
 

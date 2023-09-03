@@ -1,6 +1,5 @@
 package controlador;
 
-
 import modelo.dao.DAOFactory;
 import modelo.entidades.*;
 
@@ -31,116 +30,142 @@ public class MovimientoController extends HttpServlet {
 		ruteador(request, response);
 	}
 
-	private void ruteador(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void ruteador(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String ruta = (request.getParameter("ruta") == null ? "registrar" : request.getParameter("ruta"));
 
 		switch (ruta) {
 			case "nuevoIngreso":
-				renderIngreso(request,response);
+				renderIngreso(request, response);
 				break;
 			case "nuevoEgreso":
-				renderEgreso(request,response);
+				renderEgreso(request, response);
 				break;
 			case "nuevaTransferencia":
-				renderTransferencia(request,response);
+				renderTransferencia(request, response);
 				break;
 			case "confirmarIngreso":
 				registrarIngreso(request, response);
 				break;
-			case  "confirmarEgreso":
-				registrarEegreso(request,response);
+			case "confirmarEgreso":
+				registrarEegreso(request, response);
 				break;
-			case  "confirmarTransferencia":
-				registrarTransferenci(request,response);
+			case "confirmarTransferencia":
+				registrarTransferenci(request, response);
 				break;
 
 		}
 
 	}
 
-	private void registrarTransferenci(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void registrarTransferenci(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
 		HttpSession session = request.getSession(true);
-		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		Usuario usuario = (Usuario) session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
-		if(usuario == null) {
+		if (usuario == null) {
 			response.sendRedirect("LoginController?ruta=inicio");
 		}
 
-		//Recoleccion de datos para crear el movimiento
+		// Recoleccion de datos para crear el movimiento
 		Integer idCuentaOrigen = Integer.parseInt(request.getParameter("cuentaOrigen"));
 		Integer idCuentaDestino = Integer.parseInt(request.getParameter("cuentaDestino"));
 		double monto = Double.parseDouble(request.getParameter("monto"));
 		String descripcion = request.getParameter("desc");
 		Date fecha = new Date();
-		//Creacion del Objeto movimiento(Movimiento de transferencia 1(un egreso))
-		Movimiento movimientoEgreso = new Movimiento();
-		movimientoEgreso.setMonto(monto);
-		movimientoEgreso.setFecha(fecha);
-		movimientoEgreso.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuentaOrigen));
-		movimientoEgreso.setDescripcion(descripcion);
-		//TODO Cambiar por la categoria deseada
-		movimientoEgreso.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getCategoriaTransferencia());
 
-		//Creacion del Objeto movimiento(Movimiento de transferencia 1(un egreso))
-		Movimiento movimientoIngreso = new Movimiento();
-		movimientoIngreso.setMonto(monto);
-		movimientoIngreso.setFecha(fecha);
-		movimientoIngreso.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuentaDestino));
-		movimientoIngreso.setDescripcion(descripcion);
-		//TODO Cambiar por la categoria deseada
-		movimientoIngreso.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getCategoriaTransferencia());
+		Double totalCuentaOrigen = DAOFactory.getFactory().getCuentaDAO().getTotalCuenta(usuario.getId(),
+				idCuentaOrigen);
 
+		if (monto > 0 && (monto <= totalCuentaOrigen)) {
+			// Creacion del Objeto movimiento(Movimiento de transferencia 1(un egreso))
+			Movimiento movimientoEgreso = new Movimiento();
+			movimientoEgreso.setMonto(monto);
+			movimientoEgreso.setFecha(fecha);
+			movimientoEgreso.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuentaOrigen));
+			movimientoEgreso.setDescripcion(descripcion);
+			// TODO Cambiar por la categoria deseada
+			movimientoEgreso.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getCategoriaTransferencia());
+	
+			// Creacion del Objeto movimiento(Movimiento de transferencia 1(un egreso))
+			Movimiento movimientoIngreso = new Movimiento();
+			movimientoIngreso.setMonto(monto);
+			movimientoIngreso.setFecha(fecha);
+			movimientoIngreso.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuentaDestino));
+			movimientoIngreso.setDescripcion(descripcion);
+			// TODO Cambiar por la categoria deseada
+			movimientoIngreso.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getCategoriaTransferencia());
+	
+			// Guardado del movimiento
+			DAOFactory.getFactory().getMovimientoDAO().creaarTransferencia(movimientoIngreso, movimientoEgreso);
+			response.sendRedirect("VerMovimientosController?ruta=dashboard");
 
-		//Guardado del movimiento
-		DAOFactory.getFactory().getMovimientoDAO().creaarTransferencia(movimientoIngreso,movimientoEgreso);
-		response.sendRedirect("VerMovimientosController?ruta=dashboard");
+		} else if (monto <= 0) {
+			request.setAttribute("mensajeError", "El monto no puede ser 0 o menor a 0.");
+			request.getRequestDispatcher("MovimientoController?ruta=nuevaTransferencia").forward(request, response);
+
+		} else if (monto > totalCuentaOrigen) {
+			request.setAttribute("mensajeError", "El monto no puede ser mayor al total en la cuenta de origen.");
+			request.getRequestDispatcher("MovimientoController?ruta=nuevaTransferencia").forward(request, response);
+
+		}
 	}
 
-	private void registrarEegreso(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void registrarEegreso(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
 		HttpSession session = request.getSession(true);
-		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		Usuario usuario = (Usuario) session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
-		if(usuario == null) {
+		if (usuario == null) {
 			response.sendRedirect("LoginController?ruta=inicio");
 		}
-		//Recoleccion de datos para crear el movimiento
+		// Recoleccion de datos para crear el movimiento
 		Integer idCuenta = Integer.parseInt(request.getParameter("cuenta"));
 		double monto = Double.parseDouble(request.getParameter("monto"));
 		String descripcion = request.getParameter("desc");
 		int idCategoria = Integer.parseInt(request.getParameter("categoriaID"));
 		Date fecha = new Date();
-		//Creacion del Objeto movimiento
-		Movimiento movimiento = new Movimiento();
-		movimiento.setMonto(monto);
-		movimiento.setFecha(fecha);
-		movimiento.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuenta));
-		movimiento.setDescripcion(descripcion);
-		//TODO: Cambiar por una forma de obtener dicha categoria
-		movimiento.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getById(idCategoria));
 
+		Double totalCuenta = DAOFactory.getFactory().getCuentaDAO().getTotalCuenta(usuario.getId(), idCuenta);
 
-		//Guardado del movimiento
-		DAOFactory.getFactory().getMovimientoDAO().crearEgreso(movimiento);
-		response.sendRedirect("VerMovimientosController?ruta=dashboard");
+		if (monto > 0 && (monto <= totalCuenta)) {
+			// Creacion del Objeto movimiento
+			Movimiento movimiento = new Movimiento();
+			movimiento.setMonto(monto);
+			movimiento.setFecha(fecha);
+			movimiento.setCuenta(DAOFactory.getFactory().getCuentaDAO().getById(idCuenta));
+			movimiento.setDescripcion(descripcion);
+			// TODO: Cambiar por una forma de obtener dicha categoria
+			movimiento.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getById(idCategoria));
+
+			// Guardado del movimiento
+			DAOFactory.getFactory().getMovimientoDAO().crearEgreso(movimiento);
+			response.sendRedirect("VerMovimientosController?ruta=dashboard");
+		} else if (monto <= 0) {
+			request.setAttribute("mensajeError", "El monto no puede ser 0 o menor a 0.");
+			request.getRequestDispatcher("MovimientoController?ruta=nuevoEgreso").forward(request, response);
+		} else if (monto > totalCuenta) {
+			request.setAttribute("mensajeError", "El monto no puede ser mayor al total en la cuenta.");
+			request.getRequestDispatcher("MovimientoController?ruta=nuevoEgreso").forward(request, response);
+		}
 
 	}
 
 	private void registrarIngreso(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession(true);
-		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		Usuario usuario = (Usuario) session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
-		if(usuario == null) {
+		if (usuario == null) {
 			response.sendRedirect("LoginController?ruta=inicio");
 		}
 
-
-		//Recoleccion de datos para crear el movimiento
+		// Recoleccion de datos para crear el movimiento
 		Integer idCuenta = Integer.parseInt(request.getParameter("cuenta"));
 		double monto = Double.parseDouble(request.getParameter("monto"));
 		String descripcion = request.getParameter("desc");
 		int idCategoria = Integer.parseInt(request.getParameter("categoriaID"));
 		Date fecha = new Date();
-		//Creacion del Objeto movimiento
+		// Creacion del Objeto movimiento
 		Movimiento movimiento = new Movimiento();
 		movimiento.setMonto(monto);
 		movimiento.setFecha(fecha);
@@ -148,44 +173,51 @@ public class MovimientoController extends HttpServlet {
 		movimiento.setDescripcion(descripcion);
 		movimiento.setCategoria(DAOFactory.getFactory().getCategoriaDAO().getById(idCategoria));
 
-
-		//Guardado del movimiento
+		// Guardado del movimiento
 		DAOFactory.getFactory().getMovimientoDAO().crearIngreso(movimiento);
 		response.sendRedirect("VerMovimientosController?ruta=dashboard");
 	}
 
-	private void renderTransferencia(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void renderTransferencia(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
-		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		Usuario usuario = (Usuario) session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
-		if(usuario!=null) {
-		request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
-		request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.TRANSFERENCIA));
-		request.getRequestDispatcher("/vista/registrarTransferencia.jsp").forward(request, response);
-		}else response.sendRedirect("LoginController?ruta=inicio");
+		if (usuario != null) {
+			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
+			request.setAttribute("categorias",
+					DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.TRANSFERENCIA));
+			request.getRequestDispatcher("/vista/registrarTransferencia.jsp").forward(request, response);
+		} else
+			response.sendRedirect("LoginController?ruta=inicio");
 	}
 
-	private void renderEgreso(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void renderEgreso(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
-		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		Usuario usuario = (Usuario) session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
-		if(usuario!=null) {
+		if (usuario != null) {
 			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
-			request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.EGRESO));
+			request.setAttribute("categorias",
+					DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.EGRESO));
 			request.getRequestDispatcher("/vista/registrarEgreso.jsp").forward(request, response);
-		}else response.sendRedirect("LoginController?ruta=inicio");
+		} else
+			response.sendRedirect("LoginController?ruta=inicio");
 	}
 
-	private void renderIngreso(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void renderIngreso(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
-		Usuario usuario = (Usuario)session.getAttribute("usuarioLogeado");
+		Usuario usuario = (Usuario) session.getAttribute("usuarioLogeado");
 		System.out.println(usuario);
-		if(usuario!=null) {
+		if (usuario != null) {
 			request.setAttribute("cuentas", DAOFactory.getFactory().getCuentaDAO().getAllByID(usuario));
-			request.setAttribute("categorias", DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.INGRESO));
+			request.setAttribute("categorias",
+					DAOFactory.getFactory().getCategoriaDAO().gellAllByCategoria(TipoCategoria.INGRESO));
 			request.getRequestDispatcher("/vista/registrarIngreso.jsp").forward(request, response);
-		}else response.sendRedirect("LoginController?ruta=inicio");
+		} else
+			response.sendRedirect("LoginController?ruta=inicio");
 	}
-
 
 }
