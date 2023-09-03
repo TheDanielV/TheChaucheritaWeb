@@ -41,7 +41,7 @@
                     <td>${movimiento.getCategoria().getNombre()}</td>
                     <td>${fechaFormateada}</td>
                     <td>${movimiento.getMovimiento().getNombreTipo()}</td>
-                    <td><a href="MovimientoController?ruta=eliminarMovimiento&idMovimiento=${movimiento.getId()}&tipoMovimiento=${movimiento.getMovimiento().getNombreTipo()}&idCuenta=${movimiento.getCuenta().getId()}">Eliminar</a></td>
+                    <td><a href="MovimientoController?ruta=eliminarMovimiento&idMovimiento=${movimiento.getId()}&tipoMovimiento=${movimiento.getMovimiento().getNombreTipo()}&idCuenta=${movimiento.getCuenta().getId()}&mesDado=${mesDado}&tipoJSP=verPorCategoria">Eliminar</a></td>
 
                 </tr>
         </c:forEach>
