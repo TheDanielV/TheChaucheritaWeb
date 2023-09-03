@@ -42,8 +42,8 @@
                     <td>${movimiento.getMovimiento().getNombreTipo()}</td>
                     <td><a href="MovimientoController?ruta=eliminarMovimiento&idMovimiento=${movimiento.getId()}&tipoMovimiento=${movimiento.getMovimiento().getNombreTipo()}">Eliminar</a></td>
 
-        </c:forEach>
                 </tr>
+        </c:forEach>
 
 
 
