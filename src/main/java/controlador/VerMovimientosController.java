@@ -129,8 +129,16 @@ public class VerMovimientosController extends HttpServlet {
 		System.out.println(usuario);
 		if(usuario!=null) {
 
-			Integer idCuenta = Integer.parseInt(request.getParameter("idCuenta"));
-			String mesDado =request.getParameter("mesDado");
+			Integer idCuenta = null;
+
+			try {
+				idCuenta = Integer.parseInt(request.getParameter("idCuenta"));
+			} catch (Exception e) {
+				idCuenta = null;
+				System.out.println("idCuenta quedo null por que? - Error: " + e);
+			}
+
+			String mesDado = request.getParameter("mesDado");
 
 			SimpleDateFormat formatoMes = getSimpleDateFormat();
 			String nombreMes;

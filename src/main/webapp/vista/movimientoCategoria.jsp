@@ -24,6 +24,7 @@
             <th>Categoria</th>
             <th>Fecha</th>
             <th>Tipo</th>
+            <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
@@ -40,15 +41,18 @@
                     <td>${movimiento.getCategoria().getNombre()}</td>
                     <td>${fechaFormateada}</td>
                     <td>${movimiento.getMovimiento().getNombreTipo()}</td>
-                    <td><a href="MovimientoController?ruta=eliminarMovimiento&idMovimiento=${movimiento.getId()}&tipoMovimiento=${movimiento.getMovimiento().getNombreTipo()}">Eliminar</a></td>
+                    <td><a href="MovimientoController?ruta=eliminarMovimiento&idMovimiento=${movimiento.getId()}&tipoMovimiento=${movimiento.getMovimiento().getNombreTipo()}&idCuenta=${movimiento.getCuenta().getId()}">Eliminar</a></td>
 
                 </tr>
         </c:forEach>
 
+        
+    </tbody>
+</table>
 
-
-        </tbody>
-    </table>
+<div class="text-center">
+    <p><c:out value="${mensajeError}"/><p>
+</div>
 
 </div>
 <!-- Agrega los enlaces a los scripts de Bootstrap y otros recursos aquí -->
