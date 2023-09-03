@@ -245,6 +245,9 @@ public class MovimientoController extends HttpServlet {
 					} else {
 						request.setAttribute("mensajeError",
 								"El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
+						System.out.println("El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
+						// Redirigir a la vista que muestra todos los movimientos
+						response.sendRedirect("VerMovimientosController?ruta=dashboard");
 					}
 				} else {
 
