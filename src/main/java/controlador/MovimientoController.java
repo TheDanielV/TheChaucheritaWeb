@@ -231,7 +231,6 @@ public class MovimientoController extends HttpServlet {
 		String tipoMovimiento = request.getParameter("tipoMovimiento");
 		Integer idCuenta = Integer.parseInt(request.getParameter("idCuenta"));
 		String tipoJSP = request.getParameter("tipoJSP");
-		tipoJSP = tipoJSP.replace("'", "");
 		String mesDado = request.getParameter("mesDado");
 
 		if (usuario != null) {
@@ -245,30 +244,30 @@ public class MovimientoController extends HttpServlet {
 
 						// Redirigir a la vista que muestra todos los movimientos
 						
-						System.out.println("VerMovimientosController?ruta=VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
-						response.sendRedirect("VerMovimientosController?ruta=VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
+						System.out.println("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
+						response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
 					} else {
 		request.setAttribute("mensajeError",
 		"El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
 		System.out.println("El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
 		// Redirigir a la vista que muestra todos los movimientos
 		
-		System.out.println("VerMovimientosController?ruta=VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
-		response.sendRedirect("VerMovimientosController?ruta=VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
+		System.out.println("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
+		response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
 	}
 } else {
 	
 	DAOFactory.getFactory().getMovimientoDAO().deleteByID(idMovimiento);
 	
 	// Redirigir a la vista que muestra todos los movimientos
-	System.out.println("VerMovimientosController?ruta=VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
-	response.sendRedirect("VerMovimientosController?ruta=VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
+	System.out.println("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
+	response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
 }
 } else {
 	// Arreglar para la transferencia la eliminacion
 	System.out.println("Esto es una transferencia");
-	System.out.println("VerMovimientosController?ruta=VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
-				response.sendRedirect("VerMovimientosController?ruta=VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
+	System.out.println("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
+				response.sendRedirect("VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado);
 			}
 		}
 	}
