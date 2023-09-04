@@ -30,6 +30,8 @@ public class  Movimiento implements Serializable{
 
 	@Enumerated(EnumType.STRING)
 	private TipoMovimiento movimiento;
+	@OneToOne
+	private Movimiento movimientoRelacionado;
 
 
 	
@@ -102,6 +104,14 @@ public class  Movimiento implements Serializable{
 
 	public void setMovimiento(TipoMovimiento movimiento) {
 		this.movimiento = movimiento;
+	}
+
+	public Movimiento getMovimientoRelacionado() {
+		return movimientoRelacionado;
+	}
+
+	public void setMovimientoRelacionado(Movimiento movimientoRelacionado) {
+		this.movimientoRelacionado = movimientoRelacionado;
 	}
 
 	@Override

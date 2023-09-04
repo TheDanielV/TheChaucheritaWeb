@@ -62,6 +62,21 @@ public class JPAMovimientoDAO extends JPAGenericDAO<Movimiento, Integer> impleme
     }
 
 	@Override
+	public void deleteTransferencia(int idMovimiento) {
+		Movimiento movimiento = getById(idMovimiento);
+		Movimiento movimientoRelacionado = getById(movimiento.getMovimientoRelacionado().getId());
+		movimiento.setMovimientoRelacionado(null);
+		movimientoRelacionado.setMovimientoRelacionado(null);
+			//actualizamos el movimiento para eliminar la clave foranea
+			update(movimiento);
+			//Lo mismo para su movimiento relacionado
+			update(movimientoRelacionado);
+			//Sin clave foraneea, ya se puede eliminar el movimiento
+			deleteByID(movimiento.getId());
+			deleteByID(movimientoRelacionado.getId());
+	}
+
+	@Override
 	public void ajustarSaldo(Movimiento movimiento) {
 
 	}
@@ -103,6 +118,8 @@ public class JPAMovimientoDAO extends JPAGenericDAO<Movimiento, Integer> impleme
 	public void creaarTransferencia(Movimiento movimientoOrigen, Movimiento movimientoDestino) {
 		movimientoOrigen.setMovimiento(TipoMovimiento.TRANSFERENCIA);
 		movimientoDestino.setMovimiento(TipoMovimiento.TRANSFERENCIA);
+		movimientoDestino.setMovimientoRelacionado(movimientoOrigen);
+		movimientoOrigen.setMovimientoRelacionado(movimientoDestino);
 		if (movimientoDestino.getMonto()>0){
 			movimientoDestino.setMonto(movimientoDestino.getMonto()*-1);
 		}

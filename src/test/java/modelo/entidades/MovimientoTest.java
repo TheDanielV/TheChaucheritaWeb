@@ -16,5 +16,9 @@ public class MovimientoTest {
         System.out.println(DAOFactory.getFactory().getMovimientoDAO().getCategoriasConTotal(1));
 
     }
+    @Test
+    public void deleteTransferTestt(){
+        DAOFactory.getFactory().getMovimientoDAO().deleteTransferencia(12);
+    }
 
 }

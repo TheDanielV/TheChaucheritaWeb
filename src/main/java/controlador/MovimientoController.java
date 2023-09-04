@@ -252,8 +252,8 @@ public class MovimientoController extends HttpServlet {
 									"El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
 							// Redirigir a la vista que muestra todos los movimientos
 							request.getRequestDispatcher(
-									"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
-											+ "&idCuenta=" + idCuenta)
+											"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
+													+ "&idCuenta=" + idCuenta)
 									.forward(request, response);
 						}
 					} else {
@@ -265,8 +265,7 @@ public class MovimientoController extends HttpServlet {
 								+ "&idCuenta=" + idCuenta);
 					}
 				} else {
-					// Arreglar para la transferencia la eliminacion
-					System.out.println("Esto es una transferencia");
+					DAOFactory.getFactory().getMovimientoDAO().deleteTransferencia(idMovimiento);
 					response.sendRedirect(
 							"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCuenta="
 									+ idCuenta);
@@ -289,8 +288,8 @@ public class MovimientoController extends HttpServlet {
 									"El ingreso a eliminar no puede ser mayor al total en la cuenta. Debe crear un nuevo egreso.");
 							// Redirigir a la vista que muestra todos los movimientos
 							request.getRequestDispatcher(
-									"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
-											+ "&idCategoria=" + idCategoria)
+											"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado
+													+ "&idCategoria=" + idCategoria)
 									.forward(request, response);
 						}
 					} else {
@@ -302,8 +301,7 @@ public class MovimientoController extends HttpServlet {
 								+ "&idCategoria=" + idCategoria);
 					}
 				} else {
-					// Arreglar para la transferencia la eliminacion
-					System.out.println("Esto es una transferencia");
+					DAOFactory.getFactory().getMovimientoDAO().deleteTransferencia(idMovimiento);
 					response.sendRedirect(
 							"VerMovimientosController?ruta=" + tipoJSP + "&mesDado=" + mesDado + "&idCategoria="
 									+ idCategoria);

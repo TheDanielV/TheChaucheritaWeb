@@ -18,5 +18,6 @@ public interface MovimientoDAO extends GenericDAO<Movimiento, Integer> {
     public void creaarTransferencia(Movimiento movimientoOrigen, Movimiento movimientoDestino);
     public List<Movimiento> getAllByCuenta(int id_cuenta);
     public List<Movimiento> getAllByCategoria(int id_categoria);
+    public void deleteTransferencia(int idMovimiento);
 
 }

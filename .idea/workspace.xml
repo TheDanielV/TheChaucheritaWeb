@@ -14,9 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="32899a4c-59d5-49ee-bfd6-67ea52654992" name="Changes" comment="Servicio Rest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAUsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAUsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/serviciorest/UsuarioRecurso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlador/MovimientoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/dao/MovimientoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/dao/MovimientoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/entidades/Movimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAMovimientoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/jpa/JPAMovimientoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -110,22 +113,6 @@
     <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="CuentaTest.cuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheChaucheritaWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="modelo.entidades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="modelo.entidades" />
-      <option name="MAIN_CLASS_NAME" value="modelo.entidades.CuentaTest" />
-      <option name="METHOD_NAME" value="cuentaTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CuentaTest.removeCuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheChaucheritaWeb" />
       <extension name="coverage">
@@ -137,6 +124,22 @@
       <option name="PACKAGE_NAME" value="modelo.entidades" />
       <option name="MAIN_CLASS_NAME" value="modelo.entidades.CuentaTest" />
       <option name="METHOD_NAME" value="removeCuentaTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovimientoTest.deleteTransferTestt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheChaucheritaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modelo.entidades.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="modelo.entidades" />
+      <option name="MAIN_CLASS_NAME" value="modelo.entidades.MovimientoTest" />
+      <option name="METHOD_NAME" value="deleteTransferTestt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -230,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MovimientoTest.deleteTransferTestt" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="HTTP Request.generated-requests | #3" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="JUnit.CuentaTest.removeCuentaTest" />
-        <item itemvalue="JUnit.CuentaTest.cuentaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -485,15 +488,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/modelo/entidades/MovimientoTest.java</url>
-          <line>9</line>
-          <properties class="modelo.entidades.MovimientoTest">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/modelo/dao/GenericDAO.java</url>
           <line>7</line>
